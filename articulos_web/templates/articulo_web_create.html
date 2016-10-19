@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load embed_video_tags %}
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+{% load embed_video_tags %}
+
+The video tag:
+{% video object.video as my_video %}
+  URL: {{ my_video.url }}
+  Thumbnail: {{ my_video.thumbnail }}
+  Backend: {{ my_video.backend }}
+
+  {% video my_video "large" %}
+{% endvideo %}
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+{% extends 'base_main_modulo.html '%}
+{% load static from staticfiles %}
+{% block nav %}
+	<div class="nav-modulo {% block nav-border %} border-bottom-gray-1 {% endblock nav-border %}">
+		<!-- Módulo Head -->
+		<div class="nav-modulo-head">
+			
+			<!-- Usuario -->
+			<div class="usuario">
+				{% if boton_menu == False %}
+					<div>
+						
+					</div>
+				{% elif boton_menu == None %}
+					<div class="usuario-boton" id="boton_open_menu_container">
+					
+					</div>
+				{% endif%}
+				<!-- Usuario - Container -->
+				<figure class="usuario-datos">
+					<!-- Usuario - Nombre -->
+					<figcaption class="usuario-datos-nombre">
+						<a href="" class="link text-shadow-black font-weight-bolder">
+							@{{username}}
+						</a>
+					</figcaption>
+					<!-- Usuario - Imagen -->
+					<img src="{% static "imagenes/ico/System_1.ico"%}" alt="" class="usuario-datos-avatar box-shadow-black-transparent radius-circular">
+					<!-- Usuario - Botón -->
+					<div class="usuario-datos-boton " id="boton_usuario_dato_container">
+						
+					</div>
+				</figure>
+				<!-- Configuración Usuario -->
+				<ul id="usuario_panel_configuracion"class="usuario-configuracion border-white-2 box-shadow-black background-gray font-weight-bolder">
+					<!-- Configuración Usuario - Perfil Usuario -->
+					<li>
+						<a href="" class="link text-shadow-black text-center text-shadow-black"> Perfil de Usuario </a>
+					</li>
+					<!-- Configuración Usuario - Salir -->
+					<li>
+						<a href="{% url 'usuario:logout' %}" class="link text-shadow-black text-center text-shadow-black"> Salir </a>
+					</li>
+				</ul>
+			</div>
+			
+		</div>
+	</div>
+
+{% endblock nav %}
+	
+{% block script_config_template %}
+	<script id ="boton_usuario_dato_template" type="text/template">
+		<a href="" id="boton_usuario_dato" class="icon-settings2 font-size-text-1-5  text-shadow-black font-weight-bolder">
+								
+		</a>
+	</script>
+	<script id ="boton_close_menu_template" type="text/template">
+		<a href="" id="boton_close_menu" class="usuario-boton-link icon-grid font-size-text-1-5  text-shadow-black font-weight-bolder">
+					
+		</a>
+	</script>
+	<script id ="boton_open_menu_template" type="text/template">
+		<a href="" id="boton_open_menu" class="usuario-boton-link icon-grid font-size-text-1-5  text-shadow-black font-weight-bolder">
+						
+		</a>
+	</script>
+{% endblock script_config_template %}
