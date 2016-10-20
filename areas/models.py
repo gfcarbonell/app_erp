@@ -94,7 +94,7 @@ class Area(InfoSistema, Ubicacion):
 		#Nombre para la tabla del gestor de base de datos
 		db_table = 'Areas'
 		#Ordenar los registros por un campo especifico
-		ordering = ('siglas', 'nombre',)
+		ordering = ('tipo_area', 'nombre',)
 		#Nombre para el Conjunto de Objetos en el Panel de Administración
 		verbose_name = 'Area'
 		#Nombre en Plural en la lista de módulos en el Panel de Administración

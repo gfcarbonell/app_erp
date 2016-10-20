@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 from django.conf import settings
-from django.views.generic import CreateView, ListView
+from django.views.generic import CreateView, ListView, DetailView
 from .models import Empleado
 from .forms import EmpleadoModelForm, EmpleadoUsuarioForm
 from django.core.urlresolvers import reverse_lazy
@@ -61,6 +61,37 @@ class EmpleadoCreateView(CreateView):
             id_usuario  = self.get_user_id()
             is_auth     = True
             username    = self.get_username()
+        data = {
+            'id_usuario' : id_usuario,
+            'is_auth'    : is_auth,
+            'username'   : username,
+        }
+
+        context.update(data)
+        return context
+
+    def get_user_id(self):
+        return self.request.user.id
+
+    def get_username(self):
+        return self.request.user.username
+
+
+class EmpleadoDetailView(DetailView):
+    template_name   = 'empleado_detail.html'
+    model           = Empleado
+    queryset        = Empleado.objects.all()
+
+    def get_context_data(self, **kwarg):
+        context     = super(EmpleadoDetailView, self).get_context_data(**kwarg)
+        is_auth  = False
+        username = None
+
+        if self.request.user.is_authenticated():
+            id_usuario  = self.get_user_id()
+            is_auth     = True
+            username    = self.get_username()
+
         data = {
             'id_usuario' : id_usuario,
             'is_auth'    : is_auth,

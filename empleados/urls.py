@@ -7,4 +7,5 @@ urlpatterns = [
 
     url(r'^empleados/$', views.EmpleadoControlListView.as_view(), name='control'),
     url(r'^empleados/(?P<search_registro>[-\w\W\d]+)/$', views.EmpleadoControlListView.as_view(), name='control'),
+    url(r'^empleado/(?P<slug>[-\w\W\d]+)/$', views.EmpleadoDetailView.as_view(), name='detail'),
 ]

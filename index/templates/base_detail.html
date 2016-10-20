@@ -1,6 +1,31 @@
-{% extends 'base_main_modulo.html '%}
+{% extends 'base_main_modulo_nav.html '%}
 {% load static from staticfiles %}
 
 {% block section %}
+  <article class="detalle">
+    <div class="detalle-left">
+      <div class="container padding-normal-up-down">
+        <img class="imagen-perfil margin-auto-left-right background-white" src="{{object.fotografia.url}}" alt="{{object.get_nombre_completo}}" />
+        <figcaption class="detalle-nombre padding-normal-left-right">
+          <a href="#" class="link padding-normal-up-down display-block border-bottom-white-2 text-center font-weight-bolder text-shadow-black">
+            <p>
+              {{object.nombre}}
+            </p>
+            <p>
+              {{object.apellido_paterno}} {{object.apellido_materno}}
+            </p>
+          </a>
+          <p class="text-center padding-normal-up color-gris-oscuro font-weight-bolder ">
+              {{object.cargo}} de {{object.area.nombre}}
+          </p>
+        </figcaption>
+      </div>
+      <div class="container">
 
+      </div>
+    </div>
+    <div class="detalle-right">
+
+    </div>
+  </article>
 {% endblock section %}
