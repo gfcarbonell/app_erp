@@ -33,7 +33,7 @@ class Router extends Backbone.Router
     routes ()
     {
         return {
-        	"":"index",
+        	  ""                                         :"index",
             "control-de-asistencia/empleados/"         : "empleados",
             "control-de-asistencia/empleado/nuevo/"    : "empleado_nuevo",
         };

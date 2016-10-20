@@ -7,7 +7,7 @@ from django.core.urlresolvers import reverse_lazy
 from rest_framework import viewsets
 from django.db.models import Q
 import socket
-
+from pure_pagination.mixins import PaginationMixin
 
 class EmpleadoCreateView(CreateView):
     template_name = 'empleado_create.html'
@@ -35,7 +35,7 @@ class EmpleadoCreateView(CreateView):
             empleado.numero_hijo = 0
 
         user.save()
-        
+
         empleado.usuario = user
         empleado.usuario_creador      = self.request.user
         empleado.ultimo_usuario_editor = empleado.usuario_creador
@@ -77,7 +77,7 @@ class EmpleadoCreateView(CreateView):
         return self.request.user.username
 
 
-class EmpleadoControlListView(ListView):
+class EmpleadoControlListView(PaginationMixin, ListView):
     model         = Empleado
     template_name = 'empleados.html'
     paginate_by   = 10
@@ -105,17 +105,13 @@ class EmpleadoControlListView(ListView):
 
         context.update(data)
         return context
-    def get_template_names(self):
-        if self.request.GET.get('search_registro', None) != None:
-            return "empleado_table.html"
-        else:
-            return self.template_name
 
     def get_user_id(self):
         return self.request.user.id
 
     def get_username(self):
         return self.request.user.username
+
 
     def get(self, request, *args, **kwargs):
         if request.GET.get('search_registro', None):
@@ -128,9 +124,12 @@ class EmpleadoControlListView(ListView):
     def get_queryset(self):
         if self.request.GET.get('search_registro', None):
             queryset = self.model.objects.filter(
-                         Q(get_nombre_completo__icontains=self.request.GET.get('search_registro', None))|
-                         Q(numero_documento_identificacion__icontains=self.request.GET.get('search_registro', None))
-                  )
+                        Q(apellido_paterno__icontains=self.request.GET.get('search_registro', None))
+                        |Q(apellido_materno__icontains=self.request.GET.get('search_registro', None))
+                        |Q(nombre__icontains=self.request.GET.get('search_registro', None))
+                        |Q(numero_documento_identificacion__icontains=self.request.GET.get('search_registro', None))
+                        |Q(area__nombre__icontains=self.request.GET.get('search_registro', None))
+                    )
         else:
             queryset = super(EmpleadoControlListView, self).get_queryset()
         return queryset

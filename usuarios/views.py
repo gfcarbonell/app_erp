@@ -68,7 +68,7 @@ class UsuarioCreateView(CreateView):
     template_name = 'usuario_create.html'
     form_class    = UsuarioModelForm
     success_url   = reverse_lazy('usuario:control')
-    
+
     def form_valid(self, form):
         self.object = form.save(commit=False)
         self.object.usuario_creador      = self.request.user
@@ -87,7 +87,7 @@ class UsuarioCreateView(CreateView):
 
     def get_context_data(self, **kwarg):
         context     = super(UsuarioCreateView, self).get_context_data(**kwarg)
-        is_auth  = False 
+        is_auth  = False
         username = None
         id_usuario = None
         if self.request.user.is_authenticated():
@@ -106,7 +106,7 @@ class UsuarioCreateView(CreateView):
         return context
 
     def get_user_id(self):
-        return self.request.user.id 
+        return self.request.user.id
 
     def get_username(self):
         return self.request.user.username
@@ -133,7 +133,7 @@ class UsuarioUpdateView(UpdateView):
 
     def get_context_data(self, **kwarg):
         context     = super(UsuarioUpdateView, self).get_context_data(**kwarg)
-        is_auth  = False 
+        is_auth  = False
         username = None
         password = None
 
@@ -154,10 +154,10 @@ class UsuarioUpdateView(UpdateView):
         return context
 
     def get_user_id(self):
-        return self.request.user.id 
+        return self.request.user.id
 
     def get_password(self):
-        return self.request.user.password 
+        return self.request.user.password
 
     def get_username(self):
         return self.request.user.username
@@ -170,7 +170,7 @@ class UsuarioControlListView(PaginationMixin, ListView):
 
     def get_context_data(self, **kwarg):
         context     = super(UsuarioControlListView, self).get_context_data(**kwarg)
-        is_auth  = False 
+        is_auth  = False
         username = None
         id_usuario = None
         boton_menu     = False
@@ -180,12 +180,12 @@ class UsuarioControlListView(PaginationMixin, ListView):
             id_usuario  = self.get_user_id()
             is_auth     = True
             username    = self.get_username()
-               
+
         data = {
             'id_usuario'    : id_usuario,
             'is_auth'       : is_auth,
             'username'      : username,
-            'boton_menu'    : boton_menu,    
+            'boton_menu'    : boton_menu,
             'total_registro': total_registro,
         }
 
@@ -193,16 +193,16 @@ class UsuarioControlListView(PaginationMixin, ListView):
         return context
 
     def get_user_id(self):
-        return self.request.user.id 
+        return self.request.user.id
 
     def get_username(self):
         return self.request.user.username
 
     def get_template_names(self):
         if self.request.GET.get('search_registro', None) != None:
-            return "usuario_table.html"
+            return "empleado_table.html"
         else:
-            return self.template_name 
+            return self.template_name
 
     def get(self, request, *args, **kwargs):
         if request.GET.get('search_registro', None):
@@ -218,9 +218,9 @@ class UsuarioControlListView(PaginationMixin, ListView):
 
         elif self.request.GET.get('search_registro', ''):
             queryset = self.model.objects.filter(
-                        Q(slug__icontains=self.request.GET.get('search_registro', '')) 
-                        |Q(email__icontains=self.request.GET.get('search_registro', '')) 
-                        |Q(pk__icontains=self.request.GET.get('search_registro', '')) 
+                        Q(slug__icontains=self.request.GET.get('search_registro', ''))
+                        |Q(email__icontains=self.request.GET.get('search_registro', ''))
+                        |Q(pk__icontains=self.request.GET.get('search_registro', ''))
                     )
         else:
             queryset = super(UsuarioControlListView, self).get_queryset()
@@ -228,12 +228,12 @@ class UsuarioControlListView(PaginationMixin, ListView):
 
 
 class UsuarioDetailView(DetailView):
-    model = Usuario 
+    model = Usuario
     template_name = 'usuario_detail.html'
 
     def get_context_data(self, **kwarg):
         context     = super(UsuarioDetailView, self).get_context_data(**kwarg)
-        is_auth  = False 
+        is_auth  = False
         username = None
 
         if self.request.user.is_authenticated():
@@ -251,14 +251,14 @@ class UsuarioDetailView(DetailView):
         return context
 
     def get_user_id(self):
-        return self.request.user.id 
+        return self.request.user.id
 
     def get_username(self):
         return self.request.user.username
 
 
 class UsuarioViewSet(viewsets.ModelViewSet):
-    model            = Usuario 
+    model            = Usuario
     serializer_class = UsuarioSerializer
     queryset         = Usuario.objects.all()
     queryset_detail  = queryset.prefetch_related('groups__permissions')
@@ -269,12 +269,12 @@ class PermissionViewSet(viewsets.ModelViewSet):
     queryset         = Permission.objects.all()
 
 class GroupViewSet(viewsets.ModelViewSet):
-    model            = Group 
+    model            = Group
     serializer_class = GroupSerializer
     queryset         = Group.objects.all()
 
 
 class ContentTypeViewSet(viewsets.ModelViewSet):
-    model            = ContentType 
+    model            = ContentType
     serializer_class = ContentTypeSerializer
     queryset         = ContentType.objects.all()

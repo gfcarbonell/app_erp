@@ -17,7 +17,7 @@
 {% block background_agregar_movil %} background-red {% endblock background_agregar_movil %}
 {% block background_agregar_desktop %} background-red {% endblock background_agregar_desktop %}
 
-{% block action_form_search_ %} {% url "empleado:list" %} {% endblock action_form_search_ %}
+{% block action_form_search_ %} {% url "empleado:control" %} {% endblock action_form_search_ %}
 
 {% block url_agregar_registro_movil %} {% url "empleado:create" %} {% endblock url_agregar_registro_movil %}
 {% block url_agregar_registro_desktop %} {% url "empleado:create" %} {% endblock url_agregar_registro_desktop %}
@@ -35,8 +35,9 @@
 	<th class="table-head-row-column"><a href="" class="link"> Área </a></th>
 	<th class="table-head-row-column"><a href="" class="link"> Tipo de Empleado </a></th>
 	<th class="table-head-row-column"><a href="" class="link"> Cargo </a></th>
-	<th class="table-head-row-column"><a href="" class="link"> Activo </a></th>
 	<th class="table-head-row-column"><a href="" class="link"> Fecha Registro </a></th>
+	<th class="table-head-row-column"><a href="" class="link"> Activo </a></th>
+
 {% endblock table_column %}
 
 {% block table_row %}
@@ -47,13 +48,13 @@
 	{% endif %}
 {% endblock table_row %}
 
-{% block script_template %}
-	<script id ="input_search_registro_template" type="text/template">
-		<input type="search" id="input_search_registro" class="input-field-default">
-	</script>
-{% endblock script_template %}
-
 {% block background_eliminar_movil %} background-red {% endblock background_eliminar_movil %}
 {% block background_eliminar_desktop %} background-red {% endblock background_eliminar_desktop %}
 
 {% block background_search_pagina_submit %} background-red {% endblock background_search_pagina_submit %}
+
+{% block script_template %}
+	<script id ="input_search_registro_template" type="text/template">
+		<input name="search_registro" type="search" id="input_search_registro" class="input-field-default">
+	</script>
+{% endblock script_template %}

@@ -11,7 +11,6 @@ class SearchBox extends Backbone.View
 	initialize()
 	{
 		this.template = _.template($("#input_search_registro_template").html());
-
 		this.render();
 	}
 
@@ -55,7 +54,10 @@ class SearchBox extends Backbone.View
 					async: true,
 
 					success: function(data){
-						$("#container_table_body").html(data);
+						//$("#container_table_body").html(data);
+						//$("#form_search_input").submit();
+						//return true;
+						$("#container_table_body").replaceWith($('#container_table_body', $(data)));
 
 					},
 
@@ -68,11 +70,11 @@ class SearchBox extends Backbone.View
 		return false;
 	}
 
-    render()
+  render()
 	{
-        this.$el.html(this.template());
-		return this;
-    }
+			this.$el.html(this.template());
+		 	return this;
+  }
 
 }
 
