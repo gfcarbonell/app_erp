@@ -5,7 +5,7 @@
   <article class="detalle">
     <div class="detalle-left">
       <div class="container padding-normal-up-down">
-        <img class="imagen-perfil margin-auto-left-right background-white" src="{{object.fotografia.url}}" alt="{{object.get_nombre_completo}}" />
+        <img class="imagen-perfil box-shadow-black-transparent  margin-auto-left-right background-white" src="{{object.fotografia.url}}" alt="{{object.get_nombre_completo}}" />
         <figcaption class="detalle-nombre padding-normal-left-right">
           <a href="#" class="link padding-normal-up-down display-block border-bottom-white-2 text-center font-weight-bolder text-shadow-black">
             <p>
@@ -21,11 +21,77 @@
         </figcaption>
       </div>
       <div class="container">
-
+        <div class="">
+          <p class="rotulo color-white font-weight-bolder text-shadow-black">
+            DATOS - USUARIOS
+          </p>
+        </div>
+        <!-- Nombre de Usuario -->
+        <div class="detalle-item border-bottom-gray-2">
+          <p class="detalle-item-label">
+            Nombre de usuario
+          </p>
+          <p class="detalle-item-value">
+            @{{object.usuario}}
+          </p>
+        </div>
+        <!-- Correo electrónico -->
+        <div class="detalle-item border-bottom-gray-2">
+          <p class="detalle-item-label">
+            Correo electrónico
+          </p>
+          <p class="detalle-item-value">
+            {{object.usuario.email}}
+          </p>
+        </div>
+        <!-- Contraseña -->
+        <div class="detalle-item border-bottom-gray-2">
+          <p class="detalle-item-label">
+            Contraseña <a href="#" class="link color-celeste">(Cambiar) </a>
+          </p>
+          <p class="detalle-item-value">
+            {{object.usuario.password}}
+          </p>
+        </div>
+        <!-- Número Tarjeta Mágnetica -->
+        <div class="detalle-item border-bottom-gray-2">
+          <p class="detalle-item-label">
+            Número Tarjeta Mágnetica
+          </p>
+          <p class="detalle-item-value">
+            {{object.usuario.numero_tarjeta_magnetica}}
+          </p>
+        </div>
+        <!-- Número Acceso Biométrico -->
+        <div class="detalle-item border-bottom-gray-2">
+          <p class="detalle-item-label">
+            Número Acceso Biométrico
+          </p>
+          <p class="detalle-item-value">
+            {{object.usuario.numero_acceso_biometrico}}
+          </p>
+        </div>
       </div>
     </div>
     <div class="detalle-right">
-
+      <!-- Documento de Identificación -->
+      <div class="detalle-item border-bottom-gray-2">
+        <p class="detalle-item-label">
+          Documento Identificación
+        </p>
+        <p class="detalle-item-value">
+          {{object.documento_identificacion}}
+        </p>
+      </div>
+      <!-- Número Documento de Identificación -->
+      <div class="detalle-item border-bottom-gray-2">
+        <p class="detalle-item-label">
+          Número Documento de Identificación
+        </p>
+        <p class="detalle-item-value">
+          {{object.numero_documento_identificacion}}
+        </p>
+      </div>
     </div>
   </article>
 {% endblock section %}

@@ -374,15 +374,22 @@ img
 .detalle
 	display flex
 	justify-content center
-	align-items center
 	flex-direction column
+	padding .5em
+	&-item
+		padding .5em 0
+		&-label
+			padding 0 0 .5em 0
+			font-weight bolder
+		&-value
+			color white
+			font-weight bolder
+			text-shadow 1px 1px 7px black
+			word-wrap break-word
 	&-left
-		background verde_pastel
 		width 100%
 	&-right
-		background peru
-		width 320px
-		height 320px
+		width 100%
 
 .modulo
 	padding .5em
@@ -492,7 +499,8 @@ img
 					&-export
 						margin 0 .5em 0 0
 						width 130px
-
+	.detalle
+		flex-direction row
 	.aside-modulo
 		display block
 		box-shadow 0 0 10px black
