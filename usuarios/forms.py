@@ -4,7 +4,6 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, Pass
 
 #from password_reset.forms import PasswordRecoveryForm, PasswordResetForm
 from .models import Usuario
-
 from django.core.mail import send_mail
 from django.contrib.auth.tokens import default_token_generator
 from django.contrib.auth import (
@@ -16,7 +15,6 @@ class UsuarioModelForm(UserCreationForm):
 
 	password1 = forms.CharField(label="Contraseña", widget=forms.PasswordInput(attrs={'class':'input-field-default'}))
 	password2 = forms.CharField(label="Contraseña (Confirmar)", widget=forms.PasswordInput(attrs={'class':'input-field-default'}))
-
 
 	class Meta():
 		model  = Usuario
@@ -31,7 +29,6 @@ class UsuarioModelForm(UserCreationForm):
 			'numero_acceso_biometrico'	   : forms.NumberInput(attrs={'class':'input-field-default'}),
 
         }
-
 
 
 class UsuarioAuthenticationForm(AuthenticationForm):

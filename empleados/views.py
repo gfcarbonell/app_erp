@@ -8,6 +8,8 @@ from rest_framework import viewsets
 from django.db.models import Q
 import socket
 from pure_pagination.mixins import PaginationMixin
+from django.template.defaultfilters import slugify
+
 
 class EmpleadoCreateView(CreateView):
     template_name = 'empleado_create.html'
@@ -154,13 +156,8 @@ class EmpleadoControlListView(PaginationMixin, ListView):
 
     def get_queryset(self):
         if self.request.GET.get('search_registro', None):
-            queryset = self.model.objects.filter(
-                        Q(apellido_paterno__icontains=self.request.GET.get('search_registro', None))
-                        |Q(apellido_materno__icontains=self.request.GET.get('search_registro', None))
-                        |Q(nombre__icontains=self.request.GET.get('search_registro', None))
-                        |Q(numero_documento_identificacion__icontains=self.request.GET.get('search_registro', None))
-                        |Q(area__nombre__icontains=self.request.GET.get('search_registro', None))
-                    )
+            value = self.request.GET.get('search_registro', None)
+            queryset = self.model.objects.filter(Q(slug__icontains=slugify(value)))
         else:
             queryset = super(EmpleadoControlListView, self).get_queryset()
         return queryset

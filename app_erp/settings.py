@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'pure_pagination',
     'widget_tweaks', #Libreria componentes de formularios
     #'sorl.thumbnail', #Recortar imagenes grandes
+    #'password_reset',
     #MAIN
     'modulos.apps.ModulosConfig',
     'grupos_modulos.apps.GruposModulosConfig',
@@ -142,7 +143,7 @@ WSGI_APPLICATION = 'app_erp.wsgi.application'
 DATABASES = {
    'default': {
        'ENGINE': "sql_server.pyodbc",
-       'HOST': "127.0.0.1",
+      'HOST': "127.0.0.1",
        'PORT': '1433',
        'USER': "sa",
        'PASSWORD': "S1st3mas",
@@ -150,7 +151,7 @@ DATABASES = {
        'OPTIONS': {
             'host_is_server': True,
         },
-   }
+  }
 }
 
 

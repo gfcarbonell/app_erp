@@ -1,15 +1,15 @@
 {% extends 'base_main_modulo_nav.html '%}
 
 {% load static from staticfiles %}
-{% block title %} 
-	Control de Asistencia | Detalle Usuario 
+{% block title %}
+	Control de Asistencia | Detalle Usuario
 {% endblock title %}
 
-{% block src_avatar_modulo %} {% static "imagenes/png/Control_Asistencia_1.png"%} {% endblock src_avatar_modulo %}" 
+{% block src_avatar_modulo %} {% static "imagenes/png/Control_Asistencia_1.png"%} {% endblock src_avatar_modulo %}"
 {% block alt_avatar_modulo %} Control de Asistencia {% endblock alt_avatar_modulo %}"
 
-{% block nav-border %} 
-	border-bottom-red-1 
+{% block nav-border %}
+	border-bottom-red-1
 {% endblock nav-border %}
 
 {% block section %}
@@ -31,23 +31,11 @@
 				<div class="componente">
 					<!-- Field -->
 					<div class="field">
-						<!-- Label -->
-						<div class="container-label">
-							<label for="{{ form.password1.auto_id }}" class="label font-weight-bolder">
-							{{form.password1.label}}
-							</label>
-						</div>
-						<!-- Input -->
-						<div class="input">
-							<p class="text-truncate">
-								{{password}} 
-							</p>
-							<a href="" class="link color-azul font-size-text-0-75"> Cambiar Contraseña.</a>
-						</div>
+						
 					</div>
 					<!-- Error -->
 					<div class="error">
-						
+
 					</div>
 				</div>
 				<!-- Submit -->
@@ -71,7 +59,7 @@
 				</div>
 			</div>
 		</form>
-		
+
 	</div>
 </article>
 {% endblock section %}
