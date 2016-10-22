@@ -31,7 +31,8 @@ INSTALLED_APPS = [
     'social.apps.django_app.default',
     'embed_video',
     'pure_pagination',
-    'widget_tweaks',
+    'widget_tweaks', #Libreria componentes de formularios
+    #'sorl.thumbnail', #Recortar imagenes grandes
     #MAIN
     'modulos.apps.ModulosConfig',
     'grupos_modulos.apps.GruposModulosConfig',

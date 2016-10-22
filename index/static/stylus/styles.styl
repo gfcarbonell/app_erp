@@ -12,6 +12,7 @@ azul_oscuro = #273b47
 gris = #FAFAFA
 gris_claro = #eff2e7
 gris_oscuro = #333636
+gris = #4b4f56
 
 li
 	list-style none
@@ -375,22 +376,25 @@ img
 	display flex
 	justify-content center
 	flex-direction column
-	padding .5em
 	&-item
 		padding .5em 0
 		&-label
+			word-break break-word
 			padding 0 0 .5em 0
-			font-weight bolder
 		&-value
-			color white
-			font-weight bolder
-			text-shadow 1px 1px 7px black
-			word-wrap break-word
+			color #888
+			word-break break-word
 	&-left
 		width 100%
 	&-right
+		padding .5em
 		width 100%
-
+.group-detalle
+	width 100%
+	display flex
+	justify-content space-between
+	flex-direction column
+	flex-wrap wrap
 .modulo
 	padding .5em
 	&-main
@@ -453,6 +457,7 @@ img
 	#boton_agregar_desktop
 	#boton_eliminar_desktop
 		display block
+
 	.control
 		&-body
 			.actions
@@ -623,7 +628,21 @@ img
 			&-siglas
 				margin 0 .5em
 				display block
-
+@media screen and (min-width:700px)
+	.detalle
+		flex-direction row
+		justify-content space-between
+		&-item
+			padding .5em 0
+			width 320px
+			max-width 370px
+		&-left
+			max-width 380px
+		&-right
+			width 100%
+	.group-detalle
+		flex-direction row
+		padding 0 0 .5em 0
 @media screen and (min-width:1000px)
 	.control
 		&-body

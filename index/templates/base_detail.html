@@ -1,11 +1,12 @@
 {% extends 'base_main_modulo_nav.html '%}
 {% load static from staticfiles %}
 
+
 {% block section %}
   <article class="detalle">
-    <div class="detalle-left">
-      <div class="container padding-normal-up-down">
-        <img class="imagen-perfil box-shadow-black-transparent  margin-auto-left-right background-white" src="{{object.fotografia.url}}" alt="{{object.get_nombre_completo}}" />
+    <div class="detalle-left padding-full">
+      <div class="container ">
+        <img class="imagen-perfil border-black-2 margin-auto-left-right background-white" src="{{object.fotografia.url}}" alt="{{object.get_nombre_completo}}" />
         <figcaption class="detalle-nombre padding-normal-left-right">
           <a href="#" class="link padding-normal-up-down display-block border-bottom-white-2 text-center font-weight-bolder text-shadow-black">
             <p>
@@ -15,83 +16,196 @@
               {{object.apellido_paterno}} {{object.apellido_materno}}
             </p>
           </a>
-          <p class="text-center padding-normal-up color-gris-oscuro font-weight-bolder ">
+          <p class="text-center padding-normal-up-down color-gris-oscuro font-weight-bolder ">
               {{object.cargo}} de {{object.area.nombre}}
           </p>
         </figcaption>
       </div>
-      <div class="container">
-        <div class="">
-          <p class="rotulo color-white font-weight-bolder text-shadow-black">
-            DATOS - USUARIOS
+    </div>
+    <!-- Datos Personales-->
+    <div class="detalle-right">
+      <div class="border-bottom-red-2 padding-normal-down">
+				<h3 class="rotulo upper-case color-white text-shadow-black">
+				  Datos Personales
+				</h3>
+			</div>
+      <div class="group-detalle">
+        <div class="detalle-item">
+          <p class="detalle-item-label font-weight-bolder">
+              Documento Identificación
+          <p class="detalle-item-value font-weight-bolder">
+            {{object.documento_identificacion}}
           </p>
         </div>
-        <!-- Nombre de Usuario -->
-        <div class="detalle-item border-bottom-gray-2">
-          <p class="detalle-item-label">
+        <div class="detalle-item">
+          <p class="detalle-item-label font-weight-bolder">
+              Número Documento Identificación
+          <p class="detalle-item-value font-weight-bolder">
+            {{object.numero_documento_identificacion}}
+          </p>
+        </div>
+        <div class="detalle-item">
+          <p class="detalle-item-label font-weight-bolder">
+            Fecha de Nacimiento
+          <p class="detalle-item-value font-weight-bolder">
+            {{object.fecha_nacimiento}}
+          </p>
+        </div>
+        <div class="detalle-item">
+          <p class="detalle-item-label font-weight-bolder">
+            Género
+          <p class="detalle-item-value font-weight-bolder">
+            {{object.genero}}
+          </p>
+        </div>
+        <div class="detalle-item">
+          <p class="detalle-item-label font-weight-bolder">
+            Estado civil
+          <p class="detalle-item-value font-weight-bolder">
+            {{object.estado_civil}}
+          </p>
+        </div>
+        <div class="detalle-item">
+          <p class="detalle-item-label font-weight-bolder">
+            Grupo sanguíneo
+          <p class="detalle-item-value font-weight-bolder">
+            {{object.grupo_sanguineo}}
+          </p>
+        </div>
+        <div class="detalle-item">
+          <p class="detalle-item-label font-weight-bolder">
+            Hijo(s)
+          <p class="detalle-item-value font-weight-bolder">
+            {{object.hijo}}
+          </p>
+        </div>
+        <div class="detalle-item">
+          <p class="detalle-item-label font-weight-bolder">
+            Número Hijo(s)
+          <p class="detalle-item-value font-weight-bolder">
+            {{object.numero_hijo}}
+          </p>
+        </div>
+      </div>
+      <!-- Datos Empleados -->
+      <div class="border-bottom-red-2 padding-normal-down">
+				<h3 class="rotulo upper-case color-white text-shadow-black">
+				  Datos Empleados
+				</h3>
+			</div>
+      <div class="group-detalle">
+        <div class="detalle-item">
+          <p class="detalle-item-label font-weight-bolder">
+              Área | Dependencia
+          <p class="detalle-item-value font-weight-bolder">
+            {{object.area}}
+          </p>
+        </div>
+        <div class="detalle-item">
+          <p class="detalle-item-label font-weight-bolder">
+              Tipo empleado
+          <p class="detalle-item-value font-weight-bolder">
+            {{object.tipo_empleado}}
+          </p>
+        </div>
+        <div class="detalle-item">
+          <p class="detalle-item-label font-weight-bolder">
+              Grado instrucción
+          <p class="detalle-item-value font-weight-bolder">
+            {{object.grado_instruccion}}
+          </p>
+        </div>
+        <div class="detalle-item">
+          <p class="detalle-item-label font-weight-bolder">
+            Profesión
+          <p class="detalle-item-value font-weight-bolder">
+            {{object.profesion}}
+          </p>
+        </div>
+        <div class="detalle-item">
+          <p class="detalle-item-label font-weight-bolder">
+            Ocupación
+          <p class="detalle-item-value font-weight-bolder">
+            {{object.ocupacion}}
+          </p>
+        </div>
+        <div class="detalle-item">
+          <p class="detalle-item-label font-weight-bolder">
+            Fecha inicio contratación
+          <p class="detalle-item-value font-weight-bolder">
+            {{object.fecha_inicio_contratacion}}
+          </p>
+        </div>
+        <div class="detalle-item">
+          <p class="detalle-item-label font-weight-bolder">
+            Fecha fin contratacion
+          <p class="detalle-item-value font-weight-bolder">
+            {% if object.fecha_fin_contratacion %}
+              {{object.fecha_fin_contratacion}}
+          	{% else %}
+              -------
+          	{% endif %}
+          </p>
+        </div>
+
+        <div class="detalle-item">
+          <p class="detalle-item-label font-weight-bolder">
+            Fecha cese
+          <p class="detalle-item-value font-weight-bolder">
+            {% if object.fecha_cese %}
+             {{object.fecha_cese}}
+          	{% else %}
+              -------
+          	{% endif %}
+          </p>
+        </div>
+      </div>
+      <!-- Datos - Usuario -->
+      <div class="border-bottom-red-2 padding-normal-down">
+				<h3 class="rotulo upper-case color-white text-shadow-black">
+				  Datos Usuarios
+				</h3>
+			</div>
+      <div class="group-detalle">
+        <div class="detalle-item">
+          <p class="detalle-item-label font-weight-bolder">
             Nombre de usuario
           </p>
-          <p class="detalle-item-value">
-            @{{object.usuario}}
+          <p class="detalle-item-value font-weight-bolder ">
+            @{{object.usuario.username}}
           </p>
         </div>
-        <!-- Correo electrónico -->
-        <div class="detalle-item border-bottom-gray-2">
-          <p class="detalle-item-label">
-            Correo electrónico
+        <div class="detalle-item">
+          <p class="detalle-item-label font-weight-bolder">
+          Correo electrónico (Institucional)
           </p>
-          <p class="detalle-item-value">
+          <p class="detalle-item-value font-weight-bolder ">
             {{object.usuario.email}}
           </p>
         </div>
-        <!-- Contraseña -->
-        <div class="detalle-item border-bottom-gray-2">
-          <p class="detalle-item-label">
-            Contraseña <a href="#" class="link color-celeste">(Cambiar) </a>
+        <div class="detalle-item">
+          <p class="detalle-item-label font-weight-bolder">
+            Contraseña <a href="#" class="link color-red"> (Cambiar) </a>
           </p>
-          <p class="detalle-item-value">
+          <p class="detalle-item-value font-weight-bolder">
             {{object.usuario.password}}
           </p>
         </div>
-        <!-- Número Tarjeta Mágnetica -->
-        <div class="detalle-item border-bottom-gray-2">
-          <p class="detalle-item-label">
-            Número Tarjeta Mágnetica
+        <div class="detalle-item">
+          <p class="detalle-item-label font-weight-bolder">
+              Número Tarjeta Mágnetica
           </p>
-          <p class="detalle-item-value">
+          <p class="detalle-item-value font-weight-bolder">
             {{object.usuario.numero_tarjeta_magnetica}}
           </p>
         </div>
-        <!-- Número Acceso Biométrico -->
-        <div class="detalle-item border-bottom-gray-2">
-          <p class="detalle-item-label">
-            Número Acceso Biométrico
-          </p>
-          <p class="detalle-item-value">
+        <div class="detalle-item">
+          <p class="detalle-item-label font-weight-bolder">
+              Número Acesso Biométrico
+          <p class="detalle-item-value font-weight-bolder">
             {{object.usuario.numero_acceso_biometrico}}
           </p>
         </div>
       </div>
-    </div>
-    <div class="detalle-right">
-      <!-- Documento de Identificación -->
-      <div class="detalle-item border-bottom-gray-2">
-        <p class="detalle-item-label">
-          Documento Identificación
-        </p>
-        <p class="detalle-item-value">
-          {{object.documento_identificacion}}
-        </p>
-      </div>
-      <!-- Número Documento de Identificación -->
-      <div class="detalle-item border-bottom-gray-2">
-        <p class="detalle-item-label">
-          Número Documento de Identificación
-        </p>
-        <p class="detalle-item-value">
-          {{object.numero_documento_identificacion}}
-        </p>
-      </div>
-    </div>
   </article>
 {% endblock section %}
