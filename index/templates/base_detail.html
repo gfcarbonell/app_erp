@@ -212,7 +212,7 @@
           </div>
           <div class="detalle-item">
             <p class="detalle-item-label font-weight-bolder">
-              Contraseña <a href="#" class="link color-red"> (Cambiar) </a>
+              Contraseña <a href="{% url "usuario:password_change" username %}" class="link color-red"> (Cambiar) </a>
             </p>
             <p class="detalle-item-value font-weight-bolder">
               {{object.usuario.password}}

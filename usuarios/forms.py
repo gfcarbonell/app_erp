@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 from django import forms
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, PasswordChangeForm, PasswordResetForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
 #from password_reset.forms import PasswordRecoveryForm, PasswordResetForm
 from .models import Usuario

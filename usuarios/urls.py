@@ -16,4 +16,11 @@ urlpatterns = [
     #url(r'^control-de-asistencia/usuario/(?P<slug>[-\w\W\d]+)/modificar-password/$', views.UsuarioPasswordChangeView.as_view(), name='update_password'),
     url(r'^logout/$', views.LogoutView.as_view(), name='logout'),
     url(r'^login/$', views.LoginView.as_view(), name='login'),
+    url(r'^control-de-asistencia/usuario/(?P<slug>[-\w\W\d]+)/modificar/contraseña/$', views.usuario_password_change, name='password_change'),
+    url(r'^pass/done$', views.usuario_password_change_done, name='password_change_done'),
+
+    url(r'^reset/confirm/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>.+)/$',
+            views.usuario_password_reset_confirm, name='password_reset_confirm'),
+
+    url(r'^reset/$', views.usuario_password_reset, name='password_reset'),
 ]

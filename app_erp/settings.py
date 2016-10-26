@@ -133,26 +133,26 @@ WSGI_APPLICATION = 'app_erp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#    }
-#}
-
 DATABASES = {
-   'default': {
-       'ENGINE': "sql_server.pyodbc",
-      'HOST': "127.0.0.1",
-       'PORT': '1433',
-       'USER': "sa",
-       'PASSWORD': "S1st3mas",
-       'NAME': "App",
-       'OPTIONS': {
-            'host_is_server': True,
-        },
-  }
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
+
+#DATABASES = {
+#   'default': {
+#       'ENGINE': "sql_server.pyodbc",
+#      'HOST': "127.0.0.1",
+#       'PORT': '1433',
+#       'USER': "sa",
+#       'PASSWORD': "S1st3mas",
+#       'NAME': "App",
+#       'OPTIONS': {
+#            'host_is_server': True,
+#        },
+#  }
+#}
 
 
 # Password validation
@@ -231,11 +231,13 @@ EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 25
 EMAIL_HOST_USER = 'r.gian.f.carbonell.s@gmail.com'
-EMAIL_HOST_PASSWORD = 'sonidolyc'
+EMAIL_HOST_PASSWORD = 'S1st3mas'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 SERVER_EMAIL = EMAIL_HOST_USER
+
+SENDSMS_BACKEND = 'sendsms.backends.console.SmsBackend'
 
 #TIEMPO MAXIMO POR DIA PARA RESTABLECER CONTRASEÑA MENDIA LINK
 #PASSWORD_RESET_TIMEOUT_DAYS = (1/24)/2

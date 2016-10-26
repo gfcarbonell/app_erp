@@ -35,6 +35,35 @@ from django.core.urlresolvers import reverse_lazy
 from rest_framework import viewsets
 from django.db.models import Q
 import socket
+from django.contrib.auth.views import password_change, password_change_done, password_reset_confirm, password_reset
+
+
+def usuario_password_change(request, slug):
+    return password_change(request,
+                    template_name='password_change.html',
+                    post_change_redirect=reverse_lazy("usuario:password_change_done"),
+                    password_change_form=PasswordChangeForm,
+                    extra_context={'username':request.user.username}
+                    )
+
+
+def usuario_password_change_done(request):
+    return password_change_done(request,
+                    template_name='password_change_done.html',
+                    extra_context=None
+                    )
+
+
+def usuario_password_reset_confirm(request, uidb64=None, token=None):
+    return password_reset_confirm(request, template_name='password_reset_confirm.html',
+        uidb64=uidb64, token=token, post_reset_redirect=reverse_lazy('usuario:login'))
+
+
+def usuario_password_reset(request):
+    return password_reset(request, template_name='password_reset.html',
+        email_template_name='password_reset_email.html',
+        subject_template_name='password_reset_subject.txt',
+        post_reset_redirect=reverse_lazy('usuario:login'))
 
 
 class LoginView(FormView):
@@ -94,7 +123,6 @@ class UsuarioCreateView(CreateView):
             id_usuario  = self.get_user_id()
             is_auth     = True
             username    = self.get_username()
-
 
         data = {
             'id_usuario' : id_usuario,
