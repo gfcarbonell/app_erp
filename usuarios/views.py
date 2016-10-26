@@ -36,6 +36,22 @@ from rest_framework import viewsets
 from django.db.models import Q
 import socket
 
+from django.contrib.auth.views import password_reset, password_reset_confirm, password_reset_done, password_change, password_change_done
+from django.contrib import messages
+from django.contrib.auth import update_session_auth_hash
+
+
+def usuario_password_change(request, template_name=None, post_change_redirect=None, password_change_form=None, extra_context=None):
+    return password_change(request, template_name='password_change.html',
+                            post_change_redirect=reverse_lazy('usuario:password_change_done'),
+                            password_change_form=PasswordChangeForm,
+                            extra_context=None)
+
+def usuario_password_change_done(request, template_name=None, extra_context=None):
+    return password_change_done(request,
+                         template_name='password_change_done.html',
+                         extra_context=None)
+
 
 class LoginView(FormView):
     form_class    =  UsuarioAuthenticationForm

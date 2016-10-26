@@ -16,4 +16,6 @@ urlpatterns = [
     #url(r'^control-de-asistencia/usuario/(?P<slug>[-\w\W\d]+)/modificar-password/$', views.UsuarioPasswordChangeView.as_view(), name='update_password'),
     url(r'^logout/$', views.LogoutView.as_view(), name='logout'),
     url(r'^login/$', views.LoginView.as_view(), name='login'),
+    url(r'^password/$', views.usuario_password_change, name='password_change'),
+    url(r'^password/done$', views.usuario_password_change_done, name='password_change_done'),
 ]

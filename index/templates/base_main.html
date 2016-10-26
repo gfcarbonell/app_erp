@@ -20,13 +20,13 @@
 		<link rel= "shortcut icon" href="{% static "imagenes/png/Escudo_San_Andres.png" %}" type="image/x-icon"/>
 		<!-- Estilos y Diseños -->
 		<link rel="stylesheet" href="{% static "stylesheet/styles.css" %}"/>
-		
-		
+
+
 	<body>
 		<header class=" {% block position_absolute_header %} {% endblock position_absolute_header %} ">
 			{% block header %}
 			{% endblock header %}
-		</header>	
+		</header>
 		<nav>
 			{% block nav %}
 			{% endblock nav %}
@@ -38,8 +38,10 @@
 		<section>
 			{% block section %}
 			{% endblock section %}
+			{% block content %}
+			{% endblock content %}
 		</section>
-		
+
 		<footer class="{% block position_absolute_footer %} {% endblock position_absolute_footer %}">
 			{% block footer %}
 			{% endblock footer %}
@@ -52,6 +54,6 @@
 		{% endblock script_config_template %}
 
 		<script type="text/javascript" src="{% static "javascript/main.js"%} "></script>
-		
+
 	</body>
 </html>

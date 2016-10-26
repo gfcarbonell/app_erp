@@ -45,11 +45,9 @@ urlpatterns = [
     #USUARIOS
     url(r'^control-de-asistencia/',     include('empleados.urls', namespace='empleado')),
     url(r'^', 	                        include('usuarios.urls', namespace='usuario')),
-
     #SITIO WEB
     ##################################################################################
     url(r'^',                           include('index.urls', namespace='index')),
-
     #REST
     url(r'^api/', 						include(router.urls)),
 

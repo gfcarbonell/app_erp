@@ -103,7 +103,11 @@
             <p class="detalle-item-label font-weight-bolder">
               Hijo(s)
             <p class="detalle-item-value font-weight-bolder">
-              {{object.hijo}}
+              {% if object.hijo == True %}
+                Si
+              {% else %}
+                No
+              {% endif %}
             </p>
           </div>
           <div class="detalle-item">
@@ -212,7 +216,7 @@
           </div>
           <div class="detalle-item">
             <p class="detalle-item-label font-weight-bolder">
-              Contraseña <a href="#" class="link color-red"> (Cambiar) </a>
+              Contraseña <a href="" class="link color-red"> (Cambiar) </a>
             </p>
             <p class="detalle-item-value font-weight-bolder">
               {{object.usuario.password}}
@@ -231,6 +235,62 @@
                 Número Acesso Biométrico
             <p class="detalle-item-value font-weight-bolder">
               {{object.usuario.numero_acceso_biometrico}}
+            </p>
+          </div>
+        </div>
+        <!-- Datos - Extras -->
+        <div class="border-bottom-red-1">
+  				<h3 class="rotulo upper-case color-white text-shadow-black padding-normal-up-down">
+  				  Datos Extras
+  				</h3>
+  			</div>
+        <div class="group-detalle">
+          <div class="detalle-item">
+            <p class="detalle-item-label font-weight-bolder">
+              Teléfono (Personal)
+            </p>
+            <p class="detalle-item-value font-weight-bolder ">
+                {% if object.fecha_cese %}
+                  {{object.telefono}}
+              	{% else %}
+                  -------
+              	{% endif %}
+            </p>
+          </div>
+          <div class="detalle-item">
+            <p class="detalle-item-label font-weight-bolder">
+              Celular (Personal)
+            </p>
+            <p class="detalle-item-value font-weight-bolder ">
+                {% if object.fecha_cese %}
+                  {{object.celular}}
+                {% else %}
+                  -------
+                {% endif %}
+            </p>
+          </div>
+          <div class="detalle-item">
+            <p class="detalle-item-label font-weight-bolder">
+              Correo Electrónico (Personal)
+            </p>
+            <p class="detalle-item-value font-weight-bolder ">
+                {% if object.email %}
+                  {{object.email}}
+                {% else %}
+                  -------
+                {% endif %}
+            </p>
+          </div>
+          <div class="detalle-item">
+            <p class="detalle-item-label font-weight-bolder">
+              Observación (Personal)
+            </p>
+            <p class="detalle-item-value font-weight-bolder ">
+                {% if object.observacion_persona %}
+                  {{object.observacion_persona}}
+                {% else %}
+                  -------
+                {% endif %}
             </p>
           </div>
         </div>

@@ -102,6 +102,7 @@ MIDDLEWARE_CLASSES = [
 
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+
 ]
 
 ROOT_URLCONF = 'app_erp.urls'
@@ -179,7 +180,6 @@ AUTHENTICATION_BACKENDS = (
 
 # Django
 'django.contrib.auth.backends.ModelBackend',
-
 )
 
 
@@ -231,7 +231,7 @@ EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 25
 EMAIL_HOST_USER = 'r.gian.f.carbonell.s@gmail.com'
-EMAIL_HOST_PASSWORD = 'sonidolyc'
+EMAIL_HOST_PASSWORD = 'S1st3mas'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
