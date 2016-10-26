@@ -14,14 +14,14 @@ class ContentTypeSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = ContentType
         fields = '__all__'
-        
+
 class PermissionSerializer(serializers.HyperlinkedModelSerializer):
 	class Meta:
-		model = Permission 
+		model = Permission
 		fields = '__all__'
-			
+
 class UsuarioSerializer(serializers.HyperlinkedModelSerializer):
 	class Meta:
 		form_class = UsuarioModelForm
 		model = Usuario
-		fields = ['id', 'username', 'email', 'password', 'numero_tarjeta_magnetica', 'numero_acceso_biometrico', 'is_active', 'is_staff', 'is_superuser']
+		fields = ['id', 'username', 'email', 'password', 'numero_tarjeta_magnetica', 'numero_acceso_biometrico', 'avatar', 'is_active', 'is_staff', 'is_superuser']

@@ -1,6 +1,6 @@
 {% extends 'base_main_modulo.html '%}
 {% load static from staticfiles %}
-{% block title %} 
+{% block title %}
 	Iniciar Sesión | Log In
 {% endblock title %}
 
@@ -13,7 +13,7 @@
 			Bienvenidos
 		</p>
 		<p class="sub-rayado background-red">
-			
+
 		</p>
 	</div>
 	<!-- Container Form -->
@@ -86,7 +86,7 @@
 				<!-- Olvidaste tu contraseña -->
 				<div class="field">
 					<div class="input margin-auto-left-right">
-						<a href="" class="link display-block color-red text-center">
+						<a href="{% url "usuario:password_reset" %}" class="link display-block color-red text-center">
 							¿Olvidastes tu contraseña?
 						</a>
 					</div>
@@ -106,7 +106,7 @@
 				</div>
 			</div>
 		</form>
-		
+
 	</div>
 </article>
 {% endblock section %}

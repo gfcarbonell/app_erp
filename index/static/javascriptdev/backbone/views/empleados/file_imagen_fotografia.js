@@ -14,16 +14,16 @@ class FileImagen extends Backbone.View
 	}
 	events()
 	{
-		return { 
-				"change #id_model_form_empleado-fotografia"  			  : "load_imagen",
+		return {
+				"change #id_model_form_usuario-avatar"  			  : "load_imagen",
 		};
 	}
 
 	load_imagen(e)
 	{
-		var file = e.target.files[0];    
+		var file = e.target.files[0];
     var imageType = /image.*/;
-       
+
     if (!file.type.match(imageType))
       return;
     var reader = new FileReader();
@@ -35,7 +35,7 @@ class FileImagen extends Backbone.View
     $("#panel_left_imagen").attr("src",result);
   }
 
-  render() 
+  render()
 	{
       this.$el.html(this.template());
 		  return this;

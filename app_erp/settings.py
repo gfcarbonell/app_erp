@@ -144,7 +144,7 @@ WSGI_APPLICATION = 'app_erp.wsgi.application'
 DATABASES = {
    'default': {
        'ENGINE': "sql_server.pyodbc",
-      'HOST': "127.0.0.1",
+       'HOST': "127.0.0.1",
        'PORT': '1433',
        'USER': "sa",
        'PASSWORD': "S1st3mas",
@@ -236,6 +236,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 SERVER_EMAIL = EMAIL_HOST_USER
+
+SENDSMS_BACKEND = 'sendsms.backends.console.SmsBackend'
 
 #TIEMPO MAXIMO POR DIA PARA RESTABLECER CONTRASEÑA MENDIA LINK
 #PASSWORD_RESET_TIMEOUT_DAYS = (1/24)/2

@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 from django import forms
 from .models import Empleado
-from django.contrib.admin import widgets 
+from django.contrib.admin import widgets
 from betterforms.multiform import MultiModelForm
 from usuarios.forms import UsuarioModelForm
 
@@ -19,7 +19,6 @@ class EmpleadoModelForm(forms.ModelForm):
 			'apellido_paterno'			   : forms.TextInput(attrs={'class':'input-field-default'}),
 			'apellido_materno'			   : forms.TextInput(attrs={'class':'input-field-default'}),
 			'nombre'					   : forms.TextInput(attrs={'class':'input-field-default'}),
-			'fotografia'    			   : forms.FileInput(attrs={'class':'input-file'}),
 			'descripcion_empleado' 		   : forms.Textarea(attrs={'class':'input-field-area-default'}),
 			'observacion_empleado' 		   : forms.Textarea(attrs={'class':'input-field-area-default'}),
 			'documento_identificacion'	   : forms.Select(attrs={'class':'select-field-default'}),
@@ -58,7 +57,7 @@ class EmpleadoModelForm(forms.ModelForm):
 			'etapa'							: forms.TextInput(attrs={'class':'input-field-default'}),
 			'lote'							: forms.TextInput(attrs={'class':'input-field-default'}),
 			'sub_lote'						: forms.TextInput(attrs={'class':'input-field-default'}),
-			'kilometro'						: forms.NumberInput(attrs={'class':'input-field-default'}),	
+			'kilometro'						: forms.NumberInput(attrs={'class':'input-field-default'}),
 			'denominacion'					: forms.TextInput(attrs={'class':'input-field-default'}),
 			'referencia'					: forms.Textarea(attrs={'class':'input-field-area-default'}),
 
@@ -81,7 +80,3 @@ class EmpleadoUsuarioForm(MultiModelForm):
         'model_form_empleado': EmpleadoModelForm,
         'model_form_usuario': UsuarioModelForm,
     }
-
-    
-
-   

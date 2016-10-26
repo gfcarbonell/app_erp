@@ -10,7 +10,6 @@ from vias.models import Via
 from zonas.models import Zona
 from infos_sistemas.models import InfoSistema
 from ubicaciones.models import Ubicacion
-from .validators import valid_extension
 from django.core.exceptions import ValidationError
 from django.core.validators import RegexValidator
 from django.core.validators import MaxLengthValidator
@@ -65,13 +64,6 @@ class Persona(InfoSistema, Ubicacion):
 	genero 							= models.CharField(verbose_name='Género', choices=CHOICES_GENERO, default=CHOICES_GENERO[0][1], max_length=9)
 	estado_civil 					= models.ForeignKey(EstadoCivil, related_name='%(app_label)s_%(class)s_related')
 	grupo_sanguineo 				= models.ForeignKey(GrupoSanguineo, verbose_name='Grupo sanguíneo', related_name='%(app_label)s_%(class)s_related')
-	fotografia   					= models.ImageField(blank=True,
-														null=True,
-														verbose_name='Fotografía',
-														upload_to='fotografia_persona',
-														help_text='Subir fotografia (Opcional).',
-														validators=[valid_extension]
-														)
 	hijo							= models.BooleanField(verbose_name='¿Hijo(s)?',
 														  choices=BOOL_HIJO, default=False)
 	numero_hijo						= models.PositiveSmallIntegerField(

@@ -59,14 +59,18 @@ class EmpleadoCreateView(CreateView):
         is_auth  = False
         username = None
         id_usuario = None
+        avatar = None
+        perfil = None
         if self.request.user.is_authenticated():
             id_usuario  = self.get_user_id()
             is_auth     = True
             username    = self.get_username()
+            avatar      = self.get_avatar()
         data = {
             'id_usuario' : id_usuario,
             'is_auth'    : is_auth,
             'username'   : username,
+            'avatar'     : avatar
         }
 
         context.update(data)
@@ -77,6 +81,9 @@ class EmpleadoCreateView(CreateView):
 
     def get_username(self):
         return self.request.user.username
+
+    def get_avatar(self):
+        return self.request.user.avatar
 
 
 class EmpleadoDetailView(DetailView):
@@ -88,16 +95,18 @@ class EmpleadoDetailView(DetailView):
         context     = super(EmpleadoDetailView, self).get_context_data(**kwarg)
         is_auth  = False
         username = None
-
+        avatar   = None
         if self.request.user.is_authenticated():
             id_usuario  = self.get_user_id()
             is_auth     = True
             username    = self.get_username()
+            avatar      = self.get_avatar()
 
         data = {
             'id_usuario' : id_usuario,
             'is_auth'    : is_auth,
             'username'   : username,
+            'avatar'     : avatar
         }
 
         context.update(data)
@@ -108,6 +117,9 @@ class EmpleadoDetailView(DetailView):
 
     def get_username(self):
         return self.request.user.username
+
+    def get_avatar(self):
+        return self.request.user.avatar
 
 
 class EmpleadoControlListView(PaginationMixin, ListView):
@@ -122,18 +134,20 @@ class EmpleadoControlListView(PaginationMixin, ListView):
         id_usuario = None
         boton_menu     = False
         total_registro = self.model.objects.count()
+        avatar = None
 
         if self.request.user.is_authenticated():
             id_usuario  = self.get_user_id()
             is_auth     = True
             username    = self.get_username()
-
+            avatar = self.get_avatar()
         data = {
             'id_usuario'    : id_usuario,
             'is_auth'       : is_auth,
             'username'      : username,
             'boton_menu'    : boton_menu,
             'total_registro': total_registro,
+            'avatar'        : avatar
         }
 
         context.update(data)
@@ -145,6 +159,8 @@ class EmpleadoControlListView(PaginationMixin, ListView):
     def get_username(self):
         return self.request.user.username
 
+    def get_avatar(self):
+        return self.request.user.avatar
 
     def get(self, request, *args, **kwargs):
         if request.GET.get('search_registro', None):

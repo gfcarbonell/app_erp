@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 from django import forms
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, PasswordChangeForm, PasswordResetForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
 #from password_reset.forms import PasswordRecoveryForm, PasswordResetForm
 from .models import Usuario
@@ -18,7 +18,7 @@ class UsuarioModelForm(UserCreationForm):
 
 	class Meta():
 		model  = Usuario
-		fields = ['username', 'email', 'numero_tarjeta_magnetica', 'numero_acceso_biometrico', ]
+		fields = ['username', 'email', 'avatar' ,'numero_tarjeta_magnetica', 'numero_acceso_biometrico', ]
 
 		widgets = {
 			'username'    				   : forms.TextInput(attrs={'class':'input-field-default'}),
@@ -27,7 +27,7 @@ class UsuarioModelForm(UserCreationForm):
 			'email'	  					   : forms.EmailInput(attrs={'class':'input-field-default', 'placeholder':'example@example.com'}),
 			'numero_tarjeta_magnetica'	   : forms.NumberInput(attrs={'class':'input-field-default'}),
 			'numero_acceso_biometrico'	   : forms.NumberInput(attrs={'class':'input-field-default'}),
-
+            'avatar'    			   : forms.FileInput(attrs={'class':'input-file'}),
         }
 
 

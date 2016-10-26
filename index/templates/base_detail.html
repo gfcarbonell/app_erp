@@ -15,7 +15,9 @@
     <div class="detalle padding-normal-up-down ">
       <div class="detalle-left padding-full">
         <div class="container ">
-          <img class="imagen-perfil border-black-2 margin-auto-left-right background-white" src="{{object.fotografia.url}}" alt="{{object.get_nombre_completo}}" />
+          <img class="imagen-perfil border-black-2 margin-auto-left-right background-white"
+               src="{{object.usuario.avatar.url}}"
+               alt="{{object.get_nombre_completo}}"/>
           <figcaption class="detalle-nombre padding-normal-left-right">
             <a href="" class="rotulo link padding-normal-up-down display-block text-center font-weight-bolder text-shadow-black">
               <p>
@@ -216,7 +218,7 @@
           </div>
           <div class="detalle-item">
             <p class="detalle-item-label font-weight-bolder">
-              Contraseña <a href="" class="link color-red"> (Cambiar) </a>
+              Contraseña <a href="#" class="link color-red"> (Cambiar) </a>
             </p>
             <p class="detalle-item-value font-weight-bolder">
               {{object.usuario.password}}

@@ -2,15 +2,15 @@
 {% load widget_tweaks %}
 {% load static from staticfiles %}
 
-{% block title %} 
+{% block title %}
 	Control de Asistencia | Nuevo Usuario
 {% endblock title %}
 
-{% block src_avatar_modulo %} {% static "imagenes/png/Control_Asistencia_1.png"%} {% endblock src_avatar_modulo %}" 
+{% block src_avatar_modulo %} {% static "imagenes/png/Control_Asistencia_1.png"%} {% endblock src_avatar_modulo %}"
 {% block alt_avatar_modulo %} Control de Asistencia {% endblock alt_avatar_modulo %}"
 
-{% block nav-border %} 
-	border-bottom-red-1 
+{% block nav-border %}
+	border-bottom-red-1
 {% endblock nav-border %}
 
 
@@ -26,18 +26,18 @@
 		<div class="field-panel">
 			<!-- Label -->
 			<div class="container-label-panel">
-				<label for="{{ form.model_form_empleado.fotografia.auto_id }}" class="label-panel ">
-				{{form.model_form_empleado.fotografia.label}}
+				<label for="{{ form.model_form_usuario.avatar.auto_id }}" class="label-panel ">
+				{{form.model_form_usuario.avatar.label}}
 				</label>
 			</div>
 			<!-- Input -->
 			<div class="input-panel" id="container_fotografia">
-				
+
 			</div>
 		</div>
 		<!-- Error -->
 		<div class="error">
-			{{form.model_form_empleado.fotografia.errors}}
+			{{form.model_form_usuario.avatar.errors}}
 		</div>
 	</div>
 	<!-- Descripción Empleado -->
@@ -98,7 +98,7 @@
 					<label for="{{ form.model_form_empleado.apellido_paterno.auto_id }}" class="label-panel font-weight-bolder">
 					{{form.model_form_empleado.apellido_paterno.label}}
 					</label>
-					
+
 				</div>
 				<!-- Input -->
 				<div class="input-panel ">
@@ -166,7 +166,7 @@
 				</div>
 				<!-- Input -->
 				<div class="input-panel " id="container_documento_identificacion">
-					
+
 				</div>
 			</div>
 			<!-- Error -->
@@ -186,7 +186,7 @@
 				</div>
 				<!-- Input -->
 				<div class="input-panel" id="container_numero_documento_identificacion">
-					
+
 				</div>
 			</div>
 			<!-- Error -->
@@ -294,7 +294,7 @@
 				</div>
 				<!-- Input -->
 				<div class="input-panel" id="container_input_hijo">
-					
+
 				</div>
 			</div>
 			<!-- Error -->
@@ -323,7 +323,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 </div>
 <!-- Panel - Domicilio -->
 <div class="panel display-none" id="panel_domicilio">
@@ -494,7 +494,7 @@
 				{{form.model_form_empleado.bloque.errors}}
 			</div>
 		</div>
-		
+
 		<!-- Torre -->
 		<div class="componente-panel-group">
 			<!-- Field -->
@@ -819,7 +819,7 @@
 				{{form.model_form_empleado.referencia.errors}}
 			</div>
 		</div>
-		
+
 	</div>
 </div>
 <!-- Panel - Empleado -->
@@ -1036,7 +1036,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 </div>
 <!-- Panel - Usuario -->
 <div class="panel display-none" id="panel_usuario">
@@ -1062,7 +1062,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<div class="container-componente-panel-dual">
 		<!-- Password -->
 		<div class="componente-panel-dual">
@@ -1213,7 +1213,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<div class="container-componente-panel-dual">
 		<!-- E-Mail -->
 		<div class="componente-panel-dual">
@@ -1278,7 +1278,7 @@
 			</a>
 		</li>
 		<li>
-			<a href="" class="link" id="menu_domicilio"> 
+			<a href="" class="link" id="menu_domicilio">
 				Domicilio
 			</a>
 		</li>
@@ -1304,7 +1304,7 @@
 		{{form.model_form_empleado.hijo}}
 	</script>
 	<script id ="imagen_template" type="text/template">
-		{{form.model_form_empleado.fotografia}}
+		{{form.model_form_usuario.avatar}}
 	</script>
 	<script id ="documento_identificacion_template" type="text/template">
 		{{form.model_form_empleado.documento_identificacion}}
