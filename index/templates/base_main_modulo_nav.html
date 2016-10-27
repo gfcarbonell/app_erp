@@ -21,11 +21,11 @@
 					<!-- Usuario - Nombre -->
 					<figcaption class="usuario-datos-nombre">
 						<p class="color-white text-shadow-black font-weight-bolder">
-							@{{username}}
+							@{{instance.usuario.username}}
 						</p>
 					</figcaption>
 					<!-- Usuario - Imagen -->
-					<img src="{{avatar.url}}" alt="{{username}}" class="usuario-datos-avatar box-shadow-black-transparent radius-circular">
+					<img src="{{instance.usuario.avatar.url}}" alt="{{instance.usuario.username}}" class="usuario-datos-avatar box-shadow-black-transparent radius-circular">
 					<!-- Usuario - Botón -->
 					<div class="usuario-datos-boton " id="boton_usuario_dato_container">
 
@@ -34,9 +34,21 @@
 				<!-- Configuración Usuario -->
 				<ul id="usuario_panel_configuracion"class="usuario-configuracion border-white-2 box-shadow-black background-gray font-weight-bolder">
 					<!-- Configuración Usuario - Perfil Usuario -->
-					<li>
-						<a href="" class="link text-shadow-black text-center text-shadow-black"> Perfil de Empleado </a>
-					</li>
+					{% if instance %}
+						{% if "Empleado" == instance.tipo_perfil %}
+							<li>
+								<a href="{% url "empleado:detail" instance.slug %}" class="link text-shadow-black text-center text-shadow-black">
+									 Perfil de {{instance.tipo_perfil}}
+								</a>
+							</li>
+						{% endif %}
+					{% else %}
+						<li>
+							<a href="#" class="link text-shadow-black text-center text-shadow-black">
+								 Sin Perfil
+							</a>
+						</li>
+					{% endif %}
 					<!-- Configuración Usuario - Salir -->
 					<li>
 						<a href="{% url 'usuario:logout' %}" class="link text-shadow-black text-center text-shadow-black"> Salir </a>

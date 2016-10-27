@@ -27,7 +27,7 @@
 			<!-- Label -->
 			<div class="container-label-panel">
 				<label for="{{ form.model_form_usuario.avatar.auto_id }}" class="label-panel ">
-				{{form.model_form_usuario.avatar.label}}
+				{{form.avatar.label}}
 				</label>
 			</div>
 			<!-- Input -->
@@ -37,7 +37,7 @@
 		</div>
 		<!-- Error -->
 		<div class="error">
-			{{form.model_form_usuario.avatar.errors}}
+			{{form.avatar.errors}}
 		</div>
 	</div>
 	<!-- Descripción Empleado -->
@@ -46,18 +46,18 @@
 		<div class="field-panel">
 			<!-- Label -->
 			<div class="container-label-panel">
-				<label for="{{ form.model_form_empleado.descripcion_empleado.auto_id }}" class="label-panel ">
-				{{form.model_form_empleado.descripcion_empleado.label}}
+				<label for="{{ form.descripcion_empleado.auto_id }}" class="label-panel ">
+				{{form.descripcion_empleado.label}}
 				</label>
 			</div>
 			<!-- Input -->
 			<div class="input-panel ">
-				{{form.model_form_empleado.descripcion_empleado}}
+				{{form.descripcion_empleado}}
 			</div>
 		</div>
 		<!-- Error -->
 		<div class="error">
-			{{form.model_form_empleado.descripcion_empleado.errors}}
+			{{form.descripcion_empleado.errors}}
 		</div>
 	</div>
 	<!-- Observación Empleado -->
@@ -66,18 +66,18 @@
 		<div class="field-panel">
 			<!-- Label -->
 			<div class="container-label-panel">
-				<label for="{{ form.model_form_empleado.observacion_empleado.auto_id }}" class="label-panel ">
-				{{form.model_form_empleado.observacion_empleado.label}}
+				<label for="{{ form.observacion_empleado.auto_id }}" class="label-panel ">
+				{{form.observacion_empleado.label}}
 				</label>
 			</div>
 			<!-- Input -->
 			<div class="input-panel ">
-				{{form.model_form_empleado.observacion_empleado}}
+				{{form.observacion_empleado}}
 			</div>
 		</div>
 		<!-- Error -->
 		<div class="error">
-			{{form.model_form_empleado.observacion_empleado.errors}}
+			{{form.observacion_empleado.errors}}
 		</div>
 	</div>
 </figure>
@@ -95,19 +95,19 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.model_form_empleado.apellido_paterno.auto_id }}" class="label-panel font-weight-bolder">
-					{{form.model_form_empleado.apellido_paterno.label}}
+					<label for="{{ form.apellido_paterno.auto_id }}" class="label-panel font-weight-bolder">
+					{{form.apellido_paterno.label}}
 					</label>
 
 				</div>
 				<!-- Input -->
 				<div class="input-panel ">
-					{{form.model_form_empleado.apellido_paterno}}
+					{{form.apellido_paterno}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.model_form_empleado.apellido_paterno.errors}}
+				{{form.apellido_paterno.errors}}
 			</div>
 		</div>
 		<!-- Apellido Materno -->
@@ -116,18 +116,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.model_form_empleado.apellido_materno.auto_id }}" class="label-panel font-weight-bolder">
-					{{form.model_form_empleado.apellido_materno.label}}
+					<label for="{{ form.apellido_materno.auto_id }}" class="label-panel font-weight-bolder">
+					{{form.apellido_materno.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel ">
-					{{form.model_form_empleado.apellido_materno}}
+					{{form.apellido_materno}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.model_form_empleado.apellido_materno.errors}}
+				{{form.apellido_materno.errors}}
 			</div>
 		</div>
 	</div>
@@ -138,18 +138,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.model_form_empleado.nombre.auto_id }}" class="label-panel font-weight-bolder">
-					{{form.model_form_empleado.nombre.label}}
+					<label for="{{ form.nombre.auto_id }}" class="label-panel font-weight-bolder">
+					{{form.nombre.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel ">
-					{{form.model_form_empleado.nombre}}
+					{{form.nombre}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.model_form_empleado.nombre.errors}}
+				{{form.nombre.errors}}
 			</div>
 		</div>
 	</div>
@@ -160,8 +160,8 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.model_form_empleado.documento_identificacion.auto_id }}" class="label-panel font-weight-bolder">
-					{{form.model_form_empleado.documento_identificacion.label}}
+					<label for="{{ form.documento_identificacion.auto_id }}" class="label-panel font-weight-bolder">
+					{{form.documento_identificacion.label}}
 					</label>
 				</div>
 				<!-- Input -->
@@ -171,7 +171,7 @@
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.model_form_empleado.documento_identificacion.errors}}
+				{{form.documento_identificacion.errors}}
 			</div>
 		</div>
 		<!-- Número Documento Identificación -->
@@ -180,8 +180,8 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.model_form_empleado.numero_documento_identificacion.auto_id }}" class="label-panel font-weight-bolder">
-					{{form.model_form_empleado.numero_documento_identificacion.label}}
+					<label for="{{ form.numero_documento_identificacion.auto_id }}" class="label-panel font-weight-bolder">
+					{{form.numero_documento_identificacion.label}}
 					</label>
 				</div>
 				<!-- Input -->
@@ -191,7 +191,7 @@
 			</div>
 			<!-- Error -->
 			<div class="error" id="error_numero_documento_identificacion">
-				{{form.model_form_empleado.numero_documento_identificacion.errors}}
+				{{form.numero_documento_identificacion.errors}}
 			</div>
 		</div>
 	</div>
@@ -202,18 +202,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.model_form_empleado.fecha_nacimiento.auto_id }}" class="label-panel font-weight-bolder">
-					{{form.model_form_empleado.fecha_nacimiento.label}}
+					<label for="{{ form.fecha_nacimiento.auto_id }}" class="label-panel font-weight-bolder">
+					{{form.fecha_nacimiento.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel ">
-					{{form.model_form_empleado.fecha_nacimiento|attr:"type:date"}}
+					{{form.fecha_nacimiento|attr:"type:date"}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.model_form_empleado.fecha_nacimiento.errors}}
+				{{form.fecha_nacimiento.errors}}
 			</div>
 		</div>
 	</div>
@@ -224,18 +224,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.model_form_empleado.genero.auto_id }}" class="label-panel font-weight-bolder">
-					{{form.model_form_empleado.genero.label}}
+					<label for="{{ form.genero.auto_id }}" class="label-panel font-weight-bolder">
+					{{form.genero.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.model_form_empleado.genero}}
+					{{form.genero}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.model_form_empleado.genero.errors}}
+				{{form.genero.errors}}
 			</div>
 		</div>
 	</div>
@@ -246,18 +246,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.model_form_empleado.estado_civil.auto_id }}" class="label-panel font-weight-bolder">
-					{{form.model_form_empleado.estado_civil.label}}
+					<label for="{{ form.estado_civil.auto_id }}" class="label-panel font-weight-bolder">
+					{{form.estado_civil.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel ">
-					{{form.model_form_empleado.estado_civil}}
+					{{form.estado_civil}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.model_form_empleado.estado_civil.errors}}
+				{{form.estado_civil.errors}}
 			</div>
 		</div>
 		<!-- Grupo Sanguíneo -->
@@ -266,18 +266,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.model_form_empleado.grupo_sanguineo.auto_id }}" class="label-panel font-weight-bolder">
-					{{form.model_form_empleado.grupo_sanguineo.label}}
+					<label for="{{ form.grupo_sanguineo.auto_id }}" class="label-panel font-weight-bolder">
+					{{form.grupo_sanguineo.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel ">
-					{{form.model_form_empleado.grupo_sanguineo}}
+					{{form.grupo_sanguineo}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.model_form_empleado.grupo_sanguineo.errors}}
+				{{form.grupo_sanguineo.errors}}
 			</div>
 		</div>
 	</div>
@@ -288,8 +288,8 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.model_form_empleado.hijo.auto_id }}" class="label-panel font-weight-bolder">
-					{{form.model_form_empleado.hijo.label}}
+					<label for="{{ form.hijo.auto_id }}" class="label-panel font-weight-bolder">
+					{{form.hijo.label}}
 					</label>
 				</div>
 				<!-- Input -->
@@ -299,7 +299,7 @@
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.model_form_empleado.hijo.errors}}
+				{{form.hijo.errors}}
 			</div>
 		</div>
 		<!-- Número Hijo -->
@@ -308,18 +308,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.model_form_empleado.numero_hijo.auto_id }}" class="label-panel ">
-					{{form.model_form_empleado.numero_hijo.label}}
+					<label for="{{ form.numero_hijo.auto_id }}" class="label-panel ">
+					{{form.numero_hijo.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.model_form_empleado.numero_hijo|attr:"disabled:disabled"}}
+					{{form.numero_hijo|attr:"disabled:disabled"}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.model_form_empleado.numero_hijo.errors}}
+				{{form.numero_hijo.errors}}
 			</div>
 		</div>
 	</div>

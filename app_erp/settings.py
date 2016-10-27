@@ -134,26 +134,26 @@ WSGI_APPLICATION = 'app_erp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#    }
-#}
-
 DATABASES = {
    'default': {
-       'ENGINE': "sql_server.pyodbc",
-       'HOST': "127.0.0.1",
-       'PORT': '1433',
-       'USER': "sa",
-       'PASSWORD': "S1st3mas",
-       'NAME': "App",
-       'OPTIONS': {
-            'host_is_server': True,
-        },
-  }
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
+
+#DATABASES = {
+#   'default': {
+#       'ENGINE': "sql_server.pyodbc",
+#       'HOST': "127.0.0.1",
+#       'PORT': '1433',
+#       'USER': "sa",
+#       'PASSWORD': "S1st3mas",
+#       'NAME': "App",
+#       'OPTIONS': {
+#            'host_is_server': True,
+#        },
+# }
+#}
 
 
 # Password validation

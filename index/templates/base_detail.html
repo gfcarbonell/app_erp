@@ -19,7 +19,7 @@
                src="{{object.usuario.avatar.url}}"
                alt="{{object.get_nombre_completo}}"/>
           <figcaption class="detalle-nombre padding-normal-left-right">
-            <a href="" class="rotulo link padding-normal-up-down display-block text-center font-weight-bolder text-shadow-black">
+            <a href="{% url "empleado:update" object.slug %}" class="rotulo link padding-normal-up-down display-block text-center font-weight-bolder text-shadow-black">
               <p>
                 {{object.nombre}}
               </p>
@@ -61,21 +61,21 @@
         <div class="group-detalle">
           <div class="detalle-item">
             <p class="detalle-item-label font-weight-bolder">
-                Documento Identificación
+                Documento identificación
             <p class="detalle-item-value font-weight-bolder">
               {{object.documento_identificacion}}
             </p>
           </div>
           <div class="detalle-item">
             <p class="detalle-item-label font-weight-bolder">
-                Número Documento Identificación
+                Número documento identificación
             <p class="detalle-item-value font-weight-bolder">
               {{object.numero_documento_identificacion}}
             </p>
           </div>
           <div class="detalle-item">
             <p class="detalle-item-label font-weight-bolder">
-              Fecha de Nacimiento
+              Fecha de nacimiento
             <p class="detalle-item-value font-weight-bolder">
               {{object.fecha_nacimiento}}
             </p>
@@ -114,7 +114,7 @@
           </div>
           <div class="detalle-item">
             <p class="detalle-item-label font-weight-bolder">
-              Número Hijo(s)
+              Número hijo(s)
             <p class="detalle-item-value font-weight-bolder">
               {{object.numero_hijo}}
             </p>
@@ -218,7 +218,10 @@
           </div>
           <div class="detalle-item">
             <p class="detalle-item-label font-weight-bolder">
-              Contraseña <a href="#" class="link color-red"> (Cambiar) </a>
+              Contraseña
+              {% if object.usuario == instance.usuario %}
+                <a href="{%url "usuario:password_change" object.usuario.slug %}" class="link color-red"> (Cambiar) </a>
+              {% endif %}
             </p>
             <p class="detalle-item-value font-weight-bolder">
               {{object.usuario.password}}
