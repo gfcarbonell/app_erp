@@ -12,6 +12,7 @@ var BotonOpenMenu  = require("../views/boton_open_menu");
 var PanelMenuEmpleado  = require("../views/empleados/panel_menu_empleado");
 var InputHijo = require("../views/empleados/input_hijo");
 var FotografiaLoad = require("../views/empleados/file_imagen_fotografia");
+var FotografiaUpdateLoad = require("../views/empleados/file_update_imagen_fotografia");
 var SelectInputDocumentoIdentificacion = require("../views/empleados/select_input_documento_identificacion");
 var InputNumeroDocumentoIdentificacion = require("../views/empleados/input_numero_documento_identificacion");
 
@@ -34,8 +35,9 @@ class Router extends Backbone.Router
     {
         return {
         	  ""                                         :"index",
-            "control-de-asistencia/empleados/"         : "empleados",
-            "control-de-asistencia/empleado/nuevo/"    : "empleado_nuevo",
+            "control-de-asistencia/empleados/"                    : "empleados",
+            "control-de-asistencia/empleado/nuevo/"               : "empleado_nuevo",
+            "control-de-asistencia/empleado/:empleado/modificar/" : "empleado_modificar",
         };
     }
     empleados()
@@ -49,6 +51,14 @@ class Router extends Backbone.Router
         var fotografia = new FotografiaLoad({el:$("#container_fotografia")});
         var select_input_documento_identificacion = new SelectInputDocumentoIdentificacion({el: $("#container_documento_identificacion")});
         var input_documento_identificacion = new InputNumeroDocumentoIdentificacion({el: $("#container_numero_documento_identificacion")});
+    }
+    empleado_modificar(empleado)
+    {
+      var panel_menu_empleado = new PanelMenuEmpleado({el:$("#panel_menu")});
+      var input_hijo = new InputHijo({el:$("#container_input_hijo")});
+      var fotografia = new FotografiaLoad({el:$("#container_fotografia")});
+      var select_input_documento_identificacion = new SelectInputDocumentoIdentificacion({el: $("#container_documento_identificacion")});
+      var input_documento_identificacion = new InputNumeroDocumentoIdentificacion({el: $("#container_numero_documento_identificacion")});
     }
 }
 

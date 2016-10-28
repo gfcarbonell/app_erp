@@ -83,12 +83,14 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
 													   )
 	numero_tarjeta_magnetica 		= models.PositiveIntegerField(verbose_name='Número de tarjeta mágnetica', default=0)
 	numero_acceso_biometrico		= models.PositiveIntegerField(verbose_name='Número de acceso biométrico', default=0)
-	avatar   						= models.ImageField(blank=True,
-														null=True,
-														verbose_name='Avatar (Fotografía)',
-														upload_to='avatar_usuario',
-														help_text='Subir fotografia (Opcional).',
-														validators=[valid_extension]
+	avatar   						= models.ImageField(
+															blank=True,
+															null=True,
+															verbose_name='Avatar (Fotografía)',
+															upload_to='avatar_usuario',
+															help_text='Subir fotografia (Opcional).',
+															default='default/No_Avatar_1.png',
+															validators=[valid_extension]
 														)
 	slug							= models.SlugField(editable=False, max_length=255 ,unique=True, db_index=True, )
 	fecha_registro 			   		= models.DateTimeField(auto_now_add=True, auto_now=False)

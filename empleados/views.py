@@ -55,16 +55,82 @@ class EmpleadoCreateView(TipoPerfilUsuarioMixin, CreateView):
 
         return super(EmpleadoCreateView, self).form_valid(form)
 
-class EmpleadoUpdateView(TipoPerfilUsuarioMixin, UpdateView):
+
+class EmpleadoUpdate(TipoPerfilUsuarioMixin, UpdateView):
     form_class      = EmpleadoModelForm
     success_url     = reverse_lazy('empleado:control')
     template_name   = 'empleado_update.html'
     queryset        = Empleado.objects.all()
 
+
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.ultimo_usuario_editor = self.request.user
+        try:
+            self.object.ultimo_nombre_host = socket.gethostname()
+        except:
+           self.object.ultimo_nombre_host  = 'localhost'
+
+        self.object.ultimo_direccion_ip    = socket.gethostbyname(socket.gethostname())
+        self.object.save()
+
+        return super(EmpleadoUpdate, self).form_valid(form)
+
+class EmpleadoUsuarioUpdateView(TipoPerfilUsuarioMixin, UpdateView):
+    form_class      = EmpleadoUsuarioForm
+    success_url     = reverse_lazy('empleado:control')
+    template_name   = 'empleado_usuario_update.html'
+    queryset        = Empleado.objects.all()
+
+    def get_context_data(self, **kwarg):
+        context  = super(EmpleadoUpdateView, self).get_context_data(**kwarg)
+        empleado  = self.queryset.get(slug__contains=self.kwargs['slug'])
+        data = {'empleado':empleado}
+        context.update(data)
+        return context
+
+    def get_form_kwargs(self):
+        kwargs = super(EmpleadoUpdateView, self).get_form_kwargs()
+        kwargs.update(instance={
+            'model_form_empleado': self.object,
+            'model_form_usuario': self.object.usuario,
+        })
+        return kwargs
+
+    def form_valid(self, form):
+        empleado = self.queryset.get(slug__contains=self.kwargs['slug'])
+        user = form['model_form_usuario'].save(commit=False)
+        user = empleado.usuario
+        user.ultimo_usuario_editor = self.request.user
+        try:
+            user.ultimo_nombre_host = user.nombre_host
+        except:
+           user.ultimo_nombre_host = user.nombre_host
+        user.ultimo_direccion_ip =  socket.gethostbyname(socket.gethostname())
+
+        empleado = form['model_form_empleado'].save(commit=False)
+        empleado.tipo_persona = 'Natural'
+        if empleado.numero_hijo is None:
+            empleado.numero_hijo = 0
+        user.save()
+
+        empleado.usuario = user
+        empleado.ultimo_usuario_editor = self.request.user
+        try:
+            empleado.ultimo_nombre_host = empleado.nombre_host
+        except:
+           empleado.ultimo_nombre_host = empleado.nombre_host
+        empleado.ultimo_direccion_ip =  socket.gethostbyname(socket.gethostname())
+        empleado.save()
+        return super(EmpleadoUpdateView, self).form_valid(form)
+
+
 class EmpleadoDetailView(TipoPerfilUsuarioMixin, DetailView):
     template_name   = 'empleado_detail.html'
     model           = Empleado
     queryset        = Empleado.objects.all()
+
+
 
 
 class EmpleadoControlListView(PaginationMixin, TipoPerfilUsuarioMixin, ListView):

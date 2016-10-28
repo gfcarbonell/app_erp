@@ -7,7 +7,6 @@ from usuarios.forms import UsuarioModelForm
 
 
 class EmpleadoModelForm(forms.ModelForm):
-
 	class Meta:
 		model  = Empleado
 		exclude = ['tipo_persona',  'usuario',
