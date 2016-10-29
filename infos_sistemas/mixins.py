@@ -26,9 +26,6 @@ class TipoPerfilUsuarioMixin(object):
     def get_username(self):
         return self.request.user.username
 
-    def get_avatar(self):
-        return self.request.user.avatar
-
 
 def tipo_perfil_usuario_mixin(request):
     tipo_perfil = None

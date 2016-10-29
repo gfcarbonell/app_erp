@@ -49,16 +49,15 @@ def usuario_password_change(request, slug):
                         post_change_redirect=reverse_lazy("usuario:control"),
                         password_change_form=PasswordChangeForm,
                         extra_context={'username':request.user.username,
-                                       'avatar': request.user.avatar,
                                        'instance':instance}
                     )
 
 
 def usuario_password_change_done(request, slug):
+    instance = tipo_perfil_usuario_mixin(request)
     return password_change_done(request,
                         template_name='password_change_done.html',
                         extra_context={'username':request.user.username,
-                                       'avatar': request.user.avatar,
                                        'instance':instance}
                     )
 

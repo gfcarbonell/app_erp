@@ -23,7 +23,6 @@
     				display block
     				width 100%
     				height 100%
-
 .boton-medium
 	text-align center
 	line-height 45px
@@ -73,19 +72,21 @@
 	justify-content center
 	align-items center
 	flex-direction column
-	>img
-		width 160px
-		height 160px
-		border 1px solid black
+.banner
+	max-width 320px
+	height 320px
+	display block
+	margin 0 auto
 .imagen
-	width 160px
+	width 180px
 	height 180px
 	display block
 	margin 0 auto
+
 .imagen-perfil
 	display block
-	width 170px
-	height 170px
+	width 180px
+	height 180px
 	border-radius 50%
 	transition .7s
 	&:hover
@@ -293,6 +294,10 @@
 	max-width 320px
 	margin 0 auto
 @media screen and (min-width:480px)
+	.banner
+		width 450px
+		height 450px
+		max-width initial
 	.panel-menu
 		flex-direction row
 	.form-search

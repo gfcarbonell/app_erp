@@ -18,7 +18,7 @@
 <figure class="container-imagen">
 	<!-- Imagen -->
 	<div class="container">
-		<img src="{{empleado.fotografia.url}}" alt="{{empleado}}" id="panel_left_imagen"
+		<img src="{{empleado.usuario.avatar.url}}" alt="{{empleado}}" id="panel_left_imagen"
 		class="imagen-perfil oveflow-hidden border-black-2 margin-auto-left-right background-white"/>
 	</div>
 	<!-- Fotografia -->
@@ -27,18 +27,18 @@
 		<div class="field-panel">
 			<!-- Label -->
 			<div class="container-label-panel">
-				<label for="{{ form.fotografia.auto_id }}" class="label-panel ">
-				{{form.fotografia.label}}
+				<label for="{{ form.model_form_usuario.avatar.auto_id }}" class="label-panel ">
+				{{form.model_form_usuario.avatar.label}}
 				</label>
 			</div>
 			<!-- Input -->
 			<div class="input-panel" id="container_fotografia">
-				{{form.fotografia}}
+
 			</div>
 		</div>
 		<!-- Error -->
 		<div class="error">
-			{{form.fotografia.errors}}
+			{{form.model_form_usuario.avatar.errors}}
 		</div>
 	</div>
 	<!-- Descripción Empleado -->
@@ -47,18 +47,18 @@
 		<div class="field-panel">
 			<!-- Label -->
 			<div class="container-label-panel">
-				<label for="{{ form.descripcion_empleado.auto_id }}" class="label-panel ">
-				{{form.descripcion_empleado.label}}
+				<label for="{{ form.model_form_empleado.descripcion_empleado.auto_id }}" class="label-panel ">
+				{{form.model_form_empleado.descripcion_empleado.label}}
 				</label>
 			</div>
 			<!-- Input -->
 			<div class="input-panel ">
-				{{form.descripcion_empleado}}
+				{{form.model_form_empleado.descripcion_empleado}}
 			</div>
 		</div>
 		<!-- Error -->
 		<div class="error">
-			{{form.descripcion_empleado.errors}}
+			{{form.model_form_empleado.descripcion_empleado.errors}}
 		</div>
 	</div>
 	<!-- Observación Empleado -->
@@ -67,18 +67,18 @@
 		<div class="field-panel">
 			<!-- Label -->
 			<div class="container-label-panel">
-				<label for="{{ form.observacion_empleado.auto_id }}" class="label-panel ">
-				{{form.observacion_empleado.label}}
+				<label for="{{ form.model_form_empleado.observacion_empleado.auto_id }}" class="label-panel ">
+				{{form.model_form_empleado.observacion_empleado.label}}
 				</label>
 			</div>
 			<!-- Input -->
 			<div class="input-panel ">
-				{{form.observacion_empleado}}
+				{{form.model_form_empleado.observacion_empleado}}
 			</div>
 		</div>
 		<!-- Error -->
 		<div class="error">
-			{{form.observacion_empleado.errors}}
+			{{form.model_form_empleado.observacion_empleado.errors}}
 		</div>
 	</div>
 </figure>
@@ -96,19 +96,19 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.apellido_paterno.auto_id }}" class="label-panel font-weight-bolder">
-					{{form.apellido_paterno.label}}
+					<label for="{{ form.model_form_empleado.apellido_paterno.auto_id }}" class="label-panel font-weight-bolder">
+					{{form.model_form_empleado.apellido_paterno.label}}
 					</label>
 
 				</div>
 				<!-- Input -->
 				<div class="input-panel ">
-					{{form.apellido_paterno}}
+					{{form.model_form_empleado.apellido_paterno}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.apellido_paterno.errors}}
+				{{form.model_form_empleado.apellido_paterno.errors}}
 			</div>
 		</div>
 		<!-- Apellido Materno -->
@@ -117,18 +117,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.apellido_materno.auto_id }}" class="label-panel font-weight-bolder">
-					{{form.apellido_materno.label}}
+					<label for="{{ form.model_form_empleado.apellido_materno.auto_id }}" class="label-panel font-weight-bolder">
+					{{form.model_form_empleado.apellido_materno.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel ">
-					{{form.apellido_materno}}
+					{{form.model_form_empleado.apellido_materno}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.apellido_materno.errors}}
+				{{form.model_form_empleado.apellido_materno.errors}}
 			</div>
 		</div>
 	</div>
@@ -139,18 +139,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.nombre.auto_id }}" class="label-panel font-weight-bolder">
-					{{form.nombre.label}}
+					<label for="{{ form.model_form_empleado.nombre.auto_id }}" class="label-panel font-weight-bolder">
+					{{form.model_form_empleado.nombre.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel ">
-					{{form.nombre}}
+					{{form.model_form_empleado.nombre}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.nombre.errors}}
+				{{form.model_form_empleado.nombre.errors}}
 			</div>
 		</div>
 	</div>
@@ -161,8 +161,8 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.documento_identificacion.auto_id }}" class="label-panel font-weight-bolder">
-					{{form.documento_identificacion.label}}
+					<label for="{{ form.model_form_empleado.documento_identificacion.auto_id }}" class="label-panel font-weight-bolder">
+					{{form.model_form_empleado.documento_identificacion.label}}
 					</label>
 				</div>
 				<!-- Input -->
@@ -172,7 +172,7 @@
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.documento_identificacion.errors}}
+				{{form.model_form_empleado.documento_identificacion.errors}}
 			</div>
 		</div>
 		<!-- Número Documento Identificación -->
@@ -181,8 +181,8 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.numero_documento_identificacion.auto_id }}" class="label-panel font-weight-bolder">
-					{{form.numero_documento_identificacion.label}}
+					<label for="{{ form.model_form_empleado.numero_documento_identificacion.auto_id }}" class="label-panel font-weight-bolder">
+					{{form.model_form_empleado.numero_documento_identificacion.label}}
 					</label>
 				</div>
 				<!-- Input -->
@@ -192,7 +192,7 @@
 			</div>
 			<!-- Error -->
 			<div class="error" id="error_numero_documento_identificacion">
-				{{form.numero_documento_identificacion.errors}}
+				{{form.model_form_empleado.numero_documento_identificacion.errors}}
 			</div>
 		</div>
 	</div>
@@ -203,18 +203,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.fecha_nacimiento.auto_id }}" class="label-panel font-weight-bolder">
-					{{form.fecha_nacimiento.label}}
+					<label for="{{ form.model_form_empleado.fecha_nacimiento.auto_id }}" class="label-panel font-weight-bolder">
+					{{form.model_form_empleado.fecha_nacimiento.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel ">
-					{{form.fecha_nacimiento}}
+					{{form.model_form_empleado.fecha_nacimiento}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.fecha_nacimiento.errors}}
+				{{form.model_form_empleado.fecha_nacimiento.errors}}
 			</div>
 		</div>
 	</div>
@@ -225,18 +225,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.genero.auto_id }}" class="label-panel font-weight-bolder">
-					{{form.genero.label}}
+					<label for="{{ form.model_form_empleado.genero.auto_id }}" class="label-panel font-weight-bolder">
+					{{form.model_form_empleado.genero.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.genero}}
+					{{form.model_form_empleado.genero}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.genero.errors}}
+				{{form.model_form_empleado.genero.errors}}
 			</div>
 		</div>
 	</div>
@@ -247,18 +247,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.estado_civil.auto_id }}" class="label-panel font-weight-bolder">
-					{{form.estado_civil.label}}
+					<label for="{{ form.model_form_empleado.estado_civil.auto_id }}" class="label-panel font-weight-bolder">
+					{{form.model_form_empleado.estado_civil.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel ">
-					{{form.estado_civil}}
+					{{form.model_form_empleado.estado_civil}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.estado_civil.errors}}
+				{{form.model_form_empleado.estado_civil.errors}}
 			</div>
 		</div>
 		<!-- Grupo Sanguíneo -->
@@ -267,18 +267,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.grupo_sanguineo.auto_id }}" class="label-panel font-weight-bolder">
-					{{form.grupo_sanguineo.label}}
+					<label for="{{ form.model_form_empleado.grupo_sanguineo.auto_id }}" class="label-panel font-weight-bolder">
+					{{form.model_form_empleado.grupo_sanguineo.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel ">
-					{{form.grupo_sanguineo}}
+					{{form.model_form_empleado.grupo_sanguineo}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.grupo_sanguineo.errors}}
+				{{form.model_form_empleado.grupo_sanguineo.errors}}
 			</div>
 		</div>
 	</div>
@@ -289,8 +289,8 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.hijo.auto_id }}" class="label-panel font-weight-bolder">
-					{{form.hijo.label}}
+					<label for="{{ form.model_form_empleado.hijo.auto_id }}" class="label-panel font-weight-bolder">
+					{{form.model_form_empleado.hijo.label}}
 					</label>
 				</div>
 				<!-- Input -->
@@ -300,7 +300,7 @@
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.hijo.errors}}
+				{{form.model_form_empleado.hijo.errors}}
 			</div>
 		</div>
 		<!-- Número Hijo -->
@@ -309,18 +309,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.numero_hijo.auto_id }}" class="label-panel ">
-					{{form.numero_hijo.label}}
+					<label for="{{ form.model_form_empleado.numero_hijo.auto_id }}" class="label-panel ">
+					{{form.model_form_empleado.numero_hijo.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.numero_hijo|attr:"disabled:disabled"}}
+					{{form.model_form_empleado.numero_hijo|attr:"disabled:disabled"}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.numero_hijo.errors}}
+				{{form.model_form_empleado.numero_hijo.errors}}
 			</div>
 		</div>
 	</div>
@@ -335,18 +335,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.distrito.auto_id }}" class="label-panel font-weight-bolder">
-					{{form.distrito.label}}
+					<label for="{{ form.model_form_empleado.distrito.auto_id }}" class="label-panel font-weight-bolder">
+					{{form.model_form_empleado.distrito.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.distrito}}
+					{{form.model_form_empleado.distrito}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.distrito.errors}}
+				{{form.model_form_empleado.distrito.errors}}
 			</div>
 		</div>
 	</div>
@@ -357,18 +357,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.zona.auto_id }}" class="label-panel font-weight-bolder">
-					{{form.zona.label}}
+					<label for="{{ form.model_form_empleado.zona.auto_id }}" class="label-panel font-weight-bolder">
+					{{form.model_form_empleado.zona.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.zona}}
+					{{form.model_form_empleado.zona}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.zona.errors}}
+				{{form.model_form_empleado.zona.errors}}
 			</div>
 		</div>
 		<!-- Vía -->
@@ -377,18 +377,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.via.auto_id }}" class="label-panel font-weight-bolder">
-					{{form.via.label}}
+					<label for="{{ form.model_form_empleado.via.auto_id }}" class="label-panel font-weight-bolder">
+					{{form.model_form_empleado.via.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.via}}
+					{{form.model_form_empleado.via}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.via.errors}}
+				{{form.model_form_empleado.via.errors}}
 			</div>
 		</div>
 	</div>
@@ -399,18 +399,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.nombre_direccion.auto_id }}" class="label-panel font-weight-bolder">
-					{{form.nombre_direccion.label}}
+					<label for="{{ form.model_form_empleado.nombre_direccion.auto_id }}" class="label-panel font-weight-bolder">
+					{{form.model_form_empleado.nombre_direccion.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.nombre_direccion}}
+					{{form.model_form_empleado.nombre_direccion}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.nombre_direccion.errors}}
+				{{form.model_form_empleado.nombre_direccion.errors}}
 			</div>
 		</div>
 	</div>
@@ -421,18 +421,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.sector.auto_id }}" class="label-panel">
-					{{form.sector.label}}
+					<label for="{{ form.model_form_empleado.sector.auto_id }}" class="label-panel">
+					{{form.model_form_empleado.sector.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.sector}}
+					{{form.model_form_empleado.sector}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.sector.errors}}
+				{{form.model_form_empleado.sector.errors}}
 			</div>
 		</div>
 		<!-- Zona -->
@@ -441,18 +441,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.zona_secccion.auto_id }}" class="label-panel">
-					{{form.zona_secccion.label}}
+					<label for="{{ form.model_form_empleado.zona_secccion.auto_id }}" class="label-panel">
+					{{form.model_form_empleado.zona_secccion.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.zona_secccion}}
+					{{form.model_form_empleado.zona_secccion}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.zona_secccion.errors}}
+				{{form.model_form_empleado.zona_secccion.errors}}
 			</div>
 		</div>
 		<!-- Pabellón -->
@@ -461,18 +461,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.pabellon.auto_id }}" class="label-panel">
-					{{form.pabellon.label}}
+					<label for="{{ form.model_form_empleado.pabellon.auto_id }}" class="label-panel">
+					{{form.model_form_empleado.pabellon.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.pabellon}}
+					{{form.model_form_empleado.pabellon}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.pabellon.errors}}
+				{{form.model_form_empleado.pabellon.errors}}
 			</div>
 		</div>
 		<!-- Bloque -->
@@ -481,18 +481,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.bloque.auto_id }}" class="label-panel">
-					{{form.bloque.label}}
+					<label for="{{ form.model_form_empleado.bloque.auto_id }}" class="label-panel">
+					{{form.model_form_empleado.bloque.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.bloque}}
+					{{form.model_form_empleado.bloque}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.bloque.errors}}
+				{{form.model_form_empleado.bloque.errors}}
 			</div>
 		</div>
 
@@ -502,18 +502,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.torre.auto_id }}" class="label-panel">
-					{{form.torre.label}}
+					<label for="{{ form.model_form_empleado.torre.auto_id }}" class="label-panel">
+					{{form.model_form_empleado.torre.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.torre}}
+					{{form.model_form_empleado.torre}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.torre.errors}}
+				{{form.model_form_empleado.torre.errors}}
 			</div>
 		</div>
 		<!-- Edificio -->
@@ -522,18 +522,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.edificio.auto_id }}" class="label-panel">
-					{{form.edificio.label}}
+					<label for="{{ form.model_form_empleado.edificio.auto_id }}" class="label-panel">
+					{{form.model_form_empleado.edificio.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.edificio}}
+					{{form.model_form_empleado.edificio}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.edificio.errors}}
+				{{form.model_form_empleado.edificio.errors}}
 			</div>
 		</div>
 		<!-- Departamento -->
@@ -542,18 +542,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.departamento.auto_id }}" class="label-panel">
-					{{form.departamento.label}}
+					<label for="{{ form.model_form_empleado.departamento.auto_id }}" class="label-panel">
+					{{form.model_form_empleado.departamento.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.departamento}}
+					{{form.model_form_empleado.departamento}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.departamento.errors}}
+				{{form.model_form_empleado.departamento.errors}}
 			</div>
 		</div>
 		<!-- Apartamento -->
@@ -562,18 +562,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.apartamento.auto_id }}" class="label-panel">
-					{{form.apartamento.label}}
+					<label for="{{ form.model_form_empleado.apartamento.auto_id }}" class="label-panel">
+					{{form.model_form_empleado.apartamento.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.apartamento}}
+					{{form.model_form_empleado.apartamento}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.apartamento.errors}}
+				{{form.model_form_empleado.apartamento.errors}}
 			</div>
 		</div>
 		<!-- Pasadizo -->
@@ -582,18 +582,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.pasadizo.auto_id }}" class="label-panel">
-					{{form.pasadizo.label}}
+					<label for="{{ form.model_form_empleado.pasadizo.auto_id }}" class="label-panel">
+					{{form.model_form_empleado.pasadizo.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.pasadizo}}
+					{{form.model_form_empleado.pasadizo}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.pasadizo.errors}}
+				{{form.model_form_empleado.pasadizo.errors}}
 			</div>
 		</div>
 		<!-- Piso -->
@@ -602,18 +602,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.piso.auto_id }}" class="label-panel">
-					{{form.piso.label}}
+					<label for="{{ form.model_form_empleado.piso.auto_id }}" class="label-panel">
+					{{form.model_form_empleado.piso.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.piso}}
+					{{form.model_form_empleado.piso}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.piso.errors}}
+				{{form.model_form_empleado.piso.errors}}
 			</div>
 		</div>
 		<!-- Interior -->
@@ -622,18 +622,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.interior.auto_id }}" class="label-panel">
-					{{form.interior.label}}
+					<label for="{{ form.model_form_empleado.interior.auto_id }}" class="label-panel">
+					{{form.model_form_empleado.interior.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.interior}}
+					{{form.model_form_empleado.interior}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.interior.errors}}
+				{{form.model_form_empleado.interior.errors}}
 			</div>
 		</div>
 		<!-- Cuadra -->
@@ -642,18 +642,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.cuadra.auto_id }}" class="label-panel">
-					{{form.cuadra.label}}
+					<label for="{{ form.model_form_empleado.cuadra.auto_id }}" class="label-panel">
+					{{form.model_form_empleado.cuadra.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.cuadra}}
+					{{form.model_form_empleado.cuadra}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.cuadra.errors}}
+				{{form.model_form_empleado.cuadra.errors}}
 			</div>
 		</div>
 		<!-- Manzana -->
@@ -662,18 +662,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.manzana.auto_id }}" class="label-panel">
-					{{form.manzana.label}}
+					<label for="{{ form.model_form_empleado.manzana.auto_id }}" class="label-panel">
+					{{form.model_form_empleado.manzana.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.manzana}}
+					{{form.model_form_empleado.manzana}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.manzana.errors}}
+				{{form.model_form_empleado.manzana.errors}}
 			</div>
 		</div>
 		<!-- Número -->
@@ -682,18 +682,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.numero.auto_id }}" class="label-panel">
-					{{form.numero.label}}
+					<label for="{{ form.model_form_empleado.numero.auto_id }}" class="label-panel">
+					{{form.model_form_empleado.numero.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.numero}}
+					{{form.model_form_empleado.numero}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.numero.errors}}
+				{{form.model_form_empleado.numero.errors}}
 			</div>
 		</div>
 		<!-- Etapa -->
@@ -702,18 +702,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.etapa.auto_id }}" class="label-panel">
-					{{form.etapa.label}}
+					<label for="{{ form.model_form_empleado.etapa.auto_id }}" class="label-panel">
+					{{form.model_form_empleado.etapa.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.etapa}}
+					{{form.model_form_empleado.etapa}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.etapa.errors}}
+				{{form.model_form_empleado.etapa.errors}}
 			</div>
 		</div>
 		<!-- Lote -->
@@ -722,18 +722,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.lote.auto_id }}" class="label-panel">
-					{{form.lote.label}}
+					<label for="{{ form.model_form_empleado.lote.auto_id }}" class="label-panel">
+					{{form.model_form_empleado.lote.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.lote}}
+					{{form.model_form_empleado.lote}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.lote.errors}}
+				{{form.model_form_empleado.lote.errors}}
 			</div>
 		</div>
 		<!-- Sub Lote -->
@@ -742,18 +742,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.sub_lote.auto_id }}" class="label-panel">
-					{{form.sub_lote.label}}
+					<label for="{{ form.model_form_empleado.sub_lote.auto_id }}" class="label-panel">
+					{{form.model_form_empleado.sub_lote.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.sub_lote}}
+					{{form.model_form_empleado.sub_lote}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.sub_lote.errors}}
+				{{form.model_form_empleado.sub_lote.errors}}
 			</div>
 		</div>
 		<!-- Kilómetro -->
@@ -762,18 +762,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.kilometro.auto_id }}" class="label-panel">
-					{{form.kilometro.label}}
+					<label for="{{ form.model_form_empleado.kilometro.auto_id }}" class="label-panel">
+					{{form.model_form_empleado.kilometro.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.kilometro}}
+					{{form.model_form_empleado.kilometro}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.kilometro.errors}}
+				{{form.model_form_empleado.kilometro.errors}}
 			</div>
 		</div>
 	</div>
@@ -784,18 +784,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.denominacion.auto_id }}" class="label-panel">
-					{{form.denominacion.label}}
+					<label for="{{ form.model_form_empleado.denominacion.auto_id }}" class="label-panel">
+					{{form.model_form_empleado.denominacion.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.denominacion}}
+					{{form.model_form_empleado.denominacion}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.denominacion.errors}}
+				{{form.model_form_empleado.denominacion.errors}}
 			</div>
 		</div>
 	</div>
@@ -806,18 +806,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.referencia.auto_id }}" class="label-panel">
-					{{form.referencia.label}}
+					<label for="{{ form.model_form_empleado.referencia.auto_id }}" class="label-panel">
+					{{form.model_form_empleado.referencia.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.referencia}}
+					{{form.model_form_empleado.referencia}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.referencia.errors}}
+				{{form.model_form_empleado.referencia.errors}}
 			</div>
 		</div>
 
@@ -832,18 +832,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.area.auto_id }}" class="label-panel font-weight-bolder">
-					{{form.area.label}}
+					<label for="{{ form.model_form_empleado.area.auto_id }}" class="label-panel font-weight-bolder">
+					{{form.model_form_empleado.area.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.area}}
+					{{form.model_form_empleado.area}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.area.errors}}
+				{{form.model_form_empleado.area.errors}}
 			</div>
 		</div>
 	</div>
@@ -854,18 +854,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.tipo_empleado.auto_id }}" class="label-panel font-weight-bolder">
-					{{form.tipo_empleado.label}}
+					<label for="{{ form.model_form_empleado.tipo_empleado.auto_id }}" class="label-panel font-weight-bolder">
+					{{form.model_form_empleado.tipo_empleado.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.tipo_empleado}}
+					{{form.model_form_empleado.tipo_empleado}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.tipo_empleado.errors}}
+				{{form.model_form_empleado.tipo_empleado.errors}}
 			</div>
 		</div>
 		<!-- Cargo -->
@@ -874,18 +874,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.cargo.auto_id }}" class="label-panel font-weight-bolder">
-					{{form.cargo.label}}
+					<label for="{{ form.model_form_empleado.cargo.auto_id }}" class="label-panel font-weight-bolder">
+					{{form.model_form_empleado.cargo.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.cargo}}
+					{{form.model_form_empleado.cargo}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.cargo.errors}}
+				{{form.model_form_empleado.cargo.errors}}
 			</div>
 		</div>
 	</div>
@@ -896,18 +896,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.grado_instruccion.auto_id }}" class="label-panel font-weight-bolder">
-					{{form.grado_instruccion.label}}
+					<label for="{{ form.model_form_empleado.grado_instruccion.auto_id }}" class="label-panel font-weight-bolder">
+					{{form.model_form_empleado.grado_instruccion.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.grado_instruccion}}
+					{{form.model_form_empleado.grado_instruccion}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.grado_instruccion.errors}}
+				{{form.model_form_empleado.grado_instruccion.errors}}
 			</div>
 		</div>
 	</div>
@@ -918,18 +918,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.profesion.auto_id }}" class="label-panel font-weight-bolder">
-					{{form.profesion.label}}
+					<label for="{{ form.model_form_empleado.profesion.auto_id }}" class="label-panel font-weight-bolder">
+					{{form.model_form_empleado.profesion.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.profesion}}
+					{{form.model_form_empleado.profesion}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.profesion.errors}}
+				{{form.model_form_empleado.profesion.errors}}
 			</div>
 		</div>
 		<!-- Cargo -->
@@ -938,18 +938,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.ocupacion.auto_id }}" class="label-panel font-weight-bolder">
-					{{form.ocupacion.label}}
+					<label for="{{ form.model_form_empleado.ocupacion.auto_id }}" class="label-panel font-weight-bolder">
+					{{form.model_form_empleado.ocupacion.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.ocupacion}}
+					{{form.model_form_empleado.ocupacion}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.ocupacion.errors}}
+				{{form.model_form_empleado.ocupacion.errors}}
 			</div>
 		</div>
 	</div>
@@ -960,18 +960,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.fecha_inicio_contratacion.auto_id }}" class="label-panel font-weight-bolder">
-					{{form.fecha_inicio_contratacion.label}}
+					<label for="{{ form.model_form_empleado.fecha_inicio_contratacion.auto_id }}" class="label-panel font-weight-bolder">
+					{{form.model_form_empleado.fecha_inicio_contratacion.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.fecha_inicio_contratacion}}
+					{{form.model_form_empleado.fecha_inicio_contratacion}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.fecha_inicio_contratacion.errors}}
+				{{form.model_form_empleado.fecha_inicio_contratacion.errors}}
 			</div>
 		</div>
 		<!-- Fecha Fin Contratación -->
@@ -980,18 +980,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.fecha_fin_contratacion.auto_id }}" class="label-panel font-weight-bolder">
-					{{form.fecha_fin_contratacion.label}}
+					<label for="{{ form.model_form_empleado.fecha_fin_contratacion.auto_id }}" class="label-panel font-weight-bolder">
+					{{form.model_form_empleado.fecha_fin_contratacion.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.fecha_fin_contratacion }}
+					{{form.model_form_empleado.fecha_fin_contratacion }}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.fecha_fin_contratacion.errors}}
+				{{form.model_form_empleado.fecha_fin_contratacion.errors}}
 			</div>
 		</div>
 	</div>
@@ -1002,18 +1002,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.activo.auto_id }}" class="label-panel font-weight-bolder">
-					{{form.activo.label}}
+					<label for="{{ form.model_form_empleado.activo.auto_id }}" class="label-panel font-weight-bolder">
+					{{form.model_form_empleado.activo.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.activo}}
+					{{form.model_form_empleado.activo}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.activo.errors}}
+				{{form.model_form_empleado.activo.errors}}
 			</div>
 		</div>
 		<!-- Fecha Cese -->
@@ -1022,34 +1022,155 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.fecha_cese.auto_id }}" class="label-panel font-weight-bolder">
-					{{form.fecha_cese.label}}
+					<label for="{{ form.model_form_empleado.fecha_cese.auto_id }}" class="label-panel font-weight-bolder">
+					{{form.model_form_empleado.fecha_cese.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.fecha_cese | attr:"type:date"}}
+					{{form.model_form_empleado.fecha_cese | attr:"type:date"}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.fecha_cese.errors}}
+				{{form.model_form_empleado.fecha_cese.errors}}
 			</div>
 		</div>
 	</div>
+
 </div>
 <!-- Panel - Usuario -->
-<div class="panel display-none " id="panel_usuario">
-	<div class="container-componente-panel-dual ">
-		<p class="aviso font-weight-bolder border-black-2">
-			La modificación de los datos de usuario son exclusivamente del Administrador del Sistema-ERP,
-			consultar al correo electrónico de la Sub Gerencia de Tecnologia de la Información:
-			<span class="color-red">tecnologia.informacion@munisanandres.gob.pe</span>
-		</p>
+<div class="panel display-none" id="panel_usuario">
+	<div class="container-componente-panel-dual">
+		<!-- Nombre de Usuario -->
+		<div class="componente-panel-dual">
+			<!-- Field -->
+			<div class="field-panel">
+				<!-- Label -->
+				<div class="container-label-panel">
+					<label for="{{ form.model_form_usuario.username.auto_id }}" class="label-panel font-weight-bolder">
+					{{form.model_form_usuario.username.label}}
+					</label>
+				</div>
+				<!-- Input -->
+				<div class="input-panel">
+					{{form.model_form_usuario.username}}
+				</div>
+			</div>
+			<!-- Error -->
+			<div class="error">
+				{{form.model_form_usuario.username.errors}}
+			</div>
+		</div>
 	</div>
-	<figure class="container-imagen">
-		<img class="banner" src="{% static "imagenes/png/Robot_2.png" %}" alt="" />
-	</figure>
+
+	<div class="container-componente-panel-dual">
+		<!-- Password -->
+		<div class="componente-panel-dual">
+			<!-- Field -->
+			<div class="field-panel">
+				<!-- Label -->
+				<div class="container-label-panel">
+					<label for="{{ form.model_form_usuario.password1.auto_id }}" class="label-panel font-weight-bolder">
+					{{form.model_form_usuario.password1.label}}
+					</label>
+				</div>
+				<!-- Input -->
+				<div class="input-panel">
+					{{form.model_form_usuario.password1}}
+				</div>
+			</div>
+			<!-- Error -->
+			<div class="error">
+				{{form.model_form_usuario.password1.errors}}
+			</div>
+		</div>
+		<!-- Confirmar Password -->
+		<div class="componente-panel-dual">
+			<!-- Field -->
+			<div class="field-panel">
+				<!-- Label -->
+				<div class="container-label-panel">
+					<label for="{{ form.model_form_usuario.password2.auto_id }}" class="label-panel font-weight-bolder">
+					{{form.model_form_usuario.password2.label}}
+					</label>
+				</div>
+				<!-- Input -->
+				<div class="input-panel">
+					{{form.model_form_usuario.password2}}
+				</div>
+			</div>
+			<!-- Error -->
+			<div class="error">
+				{{form.model_form_usuario.password2.errors}}
+			</div>
+		</div>
+	</div>
+	<!-- E-Mail -->
+	<div class="container-componente-panel-dual">
+		<div class="componente-panel-dual">
+			<!-- Field -->
+			<div class="field-panel">
+				<!-- Label -->
+				<div class="container-label-panel">
+					<label for="{{ form.model_form_usuario.email.auto_id }}" class="label-panel font-weight-bolder">
+					{{form.model_form_usuario.email.label}}
+					</label>
+				</div>
+				<!-- Input -->
+				<div class="input-panel">
+					{{form.model_form_usuario.email}}
+				</div>
+			</div>
+			<!-- Error -->
+			<div class="error">
+				{{form.model_form_usuario.email.errors}}
+			</div>
+		</div>
+	</div>
+	<div class="container-componente-panel-dual">
+		<!-- Número Tarjeta Mágnetica -->
+		<div class="componente-panel-dual">
+			<!-- Field -->
+			<div class="field-panel">
+				<!-- Label -->
+				<div class="container-label-panel">
+					<label for="{{ form.model_form_usuario.numero_tarjeta_magnetica.auto_id }}" class="label-panel">
+					{{form.model_form_usuario.numero_tarjeta_magnetica.label}}
+					</label>
+				</div>
+				<!-- Input -->
+				<div class="input-panel">
+					{{form.model_form_usuario.numero_tarjeta_magnetica}}
+				</div>
+			</div>
+			<!-- Error -->
+			<div class="error">
+				{{form.model_form_usuario.numero_tarjeta_magnetica.errors}}
+			</div>
+		</div>
+		<!-- Número Acceso Biómetrico -->
+		<div class="componente-panel-dual">
+			<!-- Field -->
+			<div class="field-panel">
+				<!-- Label -->
+				<div class="container-label-panel">
+					<label for="{{ form.model_form_usuario.numero_acceso_biometrico.auto_id }}" class="label-panel">
+					{{form.model_form_usuario.numero_acceso_biometrico.label}}
+					</label>
+				</div>
+				<!-- Input -->
+				<div class="input-panel">
+					{{form.model_form_usuario.numero_acceso_biometrico}}
+					{{form.model_form_usuario.nombre_host}}
+				</div>
+			</div>
+			<!-- Error -->
+			<div class="error">
+				{{form.model_form_usuario.numero_acceso_biometrico.errors}}
+			</div>
+		</div>
+	</div>
 </div>
 
 <!-- Panel - Extras -->
@@ -1061,18 +1182,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.telefono.auto_id }}" class="label-panel">
-					{{form.telefono.label}}
+					<label for="{{ form.model_form_empleado.telefono.auto_id }}" class="label-panel">
+					{{form.model_form_empleado.telefono.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.telefono}}
+					{{form.model_form_empleado.telefono}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.telefono.errors}}
+				{{form.model_form_empleado.telefono.errors}}
 			</div>
 		</div>
 		<!-- Celular -->
@@ -1081,18 +1202,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.celular.auto_id }}" class="label-panel">
-					{{form.celular.label}}
+					<label for="{{ form.model_form_empleado.celular.auto_id }}" class="label-panel">
+					{{form.model_form_empleado.celular.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.celular}}
+					{{form.model_form_empleado.celular}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.celular.errors}}
+				{{form.model_form_empleado.celular.errors}}
 			</div>
 		</div>
 	</div>
@@ -1104,19 +1225,19 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.usuario.email.auto_id }}" class="label-panel font-weight-bolder">
-					{{form.email.label}}
+					<label for="{{ form.model_form_empleado.email.auto_id }}" class="label-panel font-weight-bolder">
+					{{form.model_form_empleado.email.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.email}}
+					{{form.model_form_empleado.email}}
 
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.email.errors}}
+				{{form.model_form_empleado.email.errors}}
 			</div>
 		</div>
 	</div>
@@ -1127,18 +1248,18 @@
 			<div class="field-panel">
 				<!-- Label -->
 				<div class="container-label-panel">
-					<label for="{{ form.observacion_persona.auto_id }}" class="label-panel">
-					{{form.observacion_persona.label}}
+					<label for="{{ form.model_form_empleado.observacion_persona.auto_id }}" class="label-panel">
+					{{form.model_form_empleado.observacion_persona.label}}
 					</label>
 				</div>
 				<!-- Input -->
 				<div class="input-panel">
-					{{form.observacion_persona}}
+					{{form.model_form_empleado.observacion_persona}}
 				</div>
 			</div>
 			<!-- Error -->
 			<div class="error">
-				{{form.observacion_persona.errors}}
+				{{form.model_form_empleado.observacion_persona.errors}}
 			</div>
 		</div>
 	</div>
@@ -1184,15 +1305,15 @@
 	</script>
 
 	<script id ="input_hijo_template" type="text/template">
-		{{form.hijo}}
+		{{form.model_form_empleado.hijo}}
 	</script>
 	<script id ="imagen_template" type="text/template">
-		{{form.fotografia}}
+		{{form.model_form_usuario.avatar}}
 	</script>
 	<script id ="documento_identificacion_template" type="text/template">
-		{{form.documento_identificacion}}
+		{{form.model_form_empleado.documento_identificacion}}
 	</script>
 	<script id ="numero_documento_identificacion_template" type="text/template">
-		{{form.numero_documento_identificacion}}
+		{{form.model_form_empleado.numero_documento_identificacion}}
 	</script>
 {% endblock script_template %}

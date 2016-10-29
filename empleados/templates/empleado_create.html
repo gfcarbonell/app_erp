@@ -15,10 +15,11 @@
 
 
 {% block panel_left%}
-<figure class="container-imagen">
+<figure class="container">
 	<!-- Imagen -->
 	<div class="container">
-		<img src="" alt="" id="panel_left_imagen" class="imagen border-black-1 ">
+		<img src="{% static "imagenes/png/No_Image_1.png" %}" alt="" id="panel_left_imagen"
+		class="imagen-perfil oveflow-hidden border-black-2 margin-auto-left-right background-white"/>
 	</div>
 	<!-- Fotografia -->
 	<div class="componente-panel">
@@ -26,8 +27,8 @@
 		<div class="field-panel">
 			<!-- Label -->
 			<div class="container-label-panel">
-				<label for="{{ form.model_form_usuario.avatar.auto_id }}" class="label-panel ">
-				{{form.model_form_usuario.avatar.label}}
+				<label for="{{ form.model_form_empleado.fotografia.auto_id }}" class="label-panel ">
+				{{form.model_form_empleado.fotografia.label}}
 				</label>
 			</div>
 			<!-- Input -->
@@ -37,7 +38,7 @@
 		</div>
 		<!-- Error -->
 		<div class="error">
-			{{form.model_form_usuario.avatar.errors}}
+			{{form.model_form_empleado.fotografia.errors}}
 		</div>
 	</div>
 	<!-- Descripción Empleado -->
@@ -1106,23 +1107,25 @@
 		</div>
 	</div>
 	<!-- E-Mail -->
-	<div class="componente-panel-dual">
-		<!-- Field -->
-		<div class="field-panel">
-			<!-- Label -->
-			<div class="container-label-panel">
-				<label for="{{ form.model_form_usuario.email.auto_id }}" class="label-panel font-weight-bolder">
-				{{form.model_form_usuario.email.label}}
-				</label>
+	<div class="container-componente-panel-dual">
+		<div class="componente-panel-dual">
+			<!-- Field -->
+			<div class="field-panel">
+				<!-- Label -->
+				<div class="container-label-panel">
+					<label for="{{ form.model_form_usuario.email.auto_id }}" class="label-panel font-weight-bolder">
+					{{form.model_form_usuario.email.label}}
+					</label>
+				</div>
+				<!-- Input -->
+				<div class="input-panel">
+					{{form.model_form_usuario.email}}
+				</div>
 			</div>
-			<!-- Input -->
-			<div class="input-panel">
-				{{form.model_form_usuario.email}}
+			<!-- Error -->
+			<div class="error">
+				{{form.model_form_usuario.email.errors}}
 			</div>
-		</div>
-		<!-- Error -->
-		<div class="error">
-			{{form.model_form_usuario.email.errors}}
 		</div>
 	</div>
 	<div class="container-componente-panel-dual">
@@ -1304,7 +1307,7 @@
 		{{form.model_form_empleado.hijo}}
 	</script>
 	<script id ="imagen_template" type="text/template">
-		{{form.model_form_usuario.avatar}}
+		{{form.model_form_empleado.fotografia}}
 	</script>
 	<script id ="documento_identificacion_template" type="text/template">
 		{{form.model_form_empleado.documento_identificacion}}

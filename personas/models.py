@@ -16,7 +16,7 @@ from django.core.validators import MaxLengthValidator
 from django.core.validators import MinLengthValidator
 from django.core.validators import MaxValueValidator
 from django.core.validators import MinValueValidator
-
+from infos_sistemas.validators import valid_extension
 from django.core.validators import EmailValidator
 from django.core.validators import validate_ipv46_address
 from django.template.defaultfilters import slugify
@@ -75,6 +75,7 @@ class Persona(InfoSistema, Ubicacion):
 																			        MaxValueValidator(10),
 																			    ],
 																		help_text='Escribir número(s) de hijo(s).')
+
 	telefono 						= models.CharField(verbose_name="Télefono (Personal)",
 													    max_length=20,
 													    blank=True, null=True, help_text='(Opcional).')
@@ -90,6 +91,15 @@ class Persona(InfoSistema, Ubicacion):
 																MinLengthValidator(1),
 																MaxLengthValidator(100),
 															]
+														)
+	fotografia   					 = models.ImageField(
+															blank=True,
+															null=True,
+															verbose_name='Avatar (Fotografía)',
+															upload_to='fotografias',
+															help_text='Subir fotografia (Opcional).',
+															default='default/No_Avatar_1.png',
+															validators=[valid_extension]
 														)
 	observacion_persona 			= models.TextField(verbose_name='Observación (Persona)',
 													   blank=True, null=True,

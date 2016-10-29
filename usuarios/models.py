@@ -13,7 +13,7 @@ from django.core.validators import MinLengthValidator
 from django.core.validators import EmailValidator
 import os
 from django.conf import settings
-from infos_sistemas.validators import valid_extension
+
 
 
 class UserManager(BaseUserManager):
@@ -83,13 +83,6 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
 													   )
 	numero_tarjeta_magnetica 		= models.PositiveIntegerField(verbose_name='Número de tarjeta mágnetica', default=0)
 	numero_acceso_biometrico		= models.PositiveIntegerField(verbose_name='Número de acceso biométrico', default=0)
-	avatar   						= models.ImageField(blank=True,
-														null=True,
-														verbose_name='Avatar (Fotografía)',
-														upload_to='avatar_usuario',
-														help_text='Subir fotografia (Opcional).',
-														validators=[valid_extension]
-														)
 	slug							= models.SlugField(editable=False, max_length=255 ,unique=True, db_index=True, )
 	fecha_registro 			   		= models.DateTimeField(auto_now_add=True, auto_now=False)
 	usuario_creador          	 	= models.ForeignKey('self', null=True, default=None)

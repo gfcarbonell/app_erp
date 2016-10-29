@@ -4,7 +4,7 @@ var Backbone 	= require("backbone");
 Backbone.$ = $;
 
 
-class FileImagen extends Backbone.View
+class FileUpdateImagen extends Backbone.View
 {
 
 	initialize()
@@ -15,7 +15,7 @@ class FileImagen extends Backbone.View
 	events()
 	{
 		return {
-				"change #id_model_form_empleado-fotografia"  			  : "load_imagen",
+				"change #id_fotografia"  			  : "load_imagen",
 		};
 	}
 
@@ -43,4 +43,4 @@ class FileImagen extends Backbone.View
 
 }
 
-module.exports = FileImagen;
+module.exports = FileUpdateImagen;

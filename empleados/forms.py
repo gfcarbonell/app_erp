@@ -7,7 +7,6 @@ from usuarios.forms import UsuarioModelForm
 
 
 class EmpleadoModelForm(forms.ModelForm):
-
 	class Meta:
 		model  = Empleado
 		exclude = ['tipo_persona',  'usuario',
@@ -32,6 +31,7 @@ class EmpleadoModelForm(forms.ModelForm):
 			'celular'						: forms.NumberInput(attrs={'class':'input-field-default'}),
 			'telefono'						: forms.NumberInput(attrs={'class':'input-field-default'}),
 			'email'							: forms.EmailInput(attrs={'class':'input-field-default'}),
+			'fotografia'    				    : forms.FileInput(attrs={'class':'input-file'}),
 			'observacion_persona' 		    : forms.Textarea(attrs={'class':'input-field-area-default'}),
 
 			'distrito' 		   				: forms.Select(attrs={'class':'select-field-default'}),
