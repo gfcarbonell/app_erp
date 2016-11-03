@@ -3,7 +3,6 @@ from __future__ import unicode_literals
 from django.db import models
 
 from infos_sistemas.models import InfoSistema
-from ubicaciones.models import Ubicacion
 from sedes.models import Sede
 from django.core.validators import MaxLengthValidator
 from django.core.validators import MinLengthValidator
@@ -13,7 +12,7 @@ from tipos_areas.models import TipoArea
 from django.template.defaultfilters import slugify
 
 
-class Area(InfoSistema, Ubicacion):
+class Area(InfoSistema):
 	BOOL_ACTIVO 		 			= ((True, 'Si'), (False, 'No'))
 	sede 							= models.ForeignKey(Sede)
 	area_dependiente				= models.ForeignKey('self', related_name='areas_areas_dependientes_related', null=True, blank=True, default=None)

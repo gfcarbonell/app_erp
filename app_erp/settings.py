@@ -81,7 +81,12 @@ INSTALLED_APPS = [
     'profesiones.apps.ProfesionesConfig',
     'ocupaciones.apps.OcupacionesConfig',
     'grados_instrucciones.apps.GradosInstruccionesConfig',
-
+    #IMPUETO PREDIAL
+    'nucleos_residenciales.apps.NucleosResidencialesConfig',
+    'divisiones_areas_urbanas.apps.DivisionesAreasUrbanasConfig',
+    'ubicaciones_predios.apps.UbicacionesPrediosConfig',
+    'tipos_predios.apps.TiposPrediosConfig',
+    'complementos_ubicaciones_predios.apps.ComplementosUbicacionesPrediosConfig',
 ]
 
 PAGINATION_SETTINGS = {

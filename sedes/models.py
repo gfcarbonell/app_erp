@@ -7,7 +7,7 @@ from sitios_web.models import SitioWeb
 from ubicaciones.models import Ubicacion
 from entidades.models import Entidad
 from distritos.models import Distrito
-from zonas.models import Zona 
+from zonas.models import Zona
 from vias.models import Via
 from infos_sistemas.models import InfoSistema
 from django.core.validators import MaxLengthValidator
@@ -25,55 +25,40 @@ class Sede(InfoSistema, Ubicacion):
 											  		        MinLengthValidator(1),
 											  		        MaxLengthValidator(255),
 											  		    ],
-												  unique=True, 
-												  db_index=True, 
+												  unique=True,
+												  db_index=True,
 												  help_text='Escribir el nombre de la sede.')
-	
-	distrito 						= models.ForeignKey(Distrito)
-	zona 							= models.ForeignKey(Zona)
-	via 							= models.ForeignKey(Via)
-	nombre_direccion				= models.CharField( verbose_name='Nombre dirección',
-														max_length=255, 
-														validators=[
-															        MinLengthValidator(1),
-															        MaxLengthValidator(255),
-															    ],
-														db_index=True, 
-														help_text='Escribir nombre de la dirección.')
-	observacion_direccion			= models.TextField(verbose_name='Observación (Dirección)', 
-													   blank=True, null=True, help_text='(Opcional).')
-	
 	sitio_web 						= models.OneToOneField(SitioWeb, unique=True,)
-	telefono						= models.CharField(verbose_name="Télefono", 
-													    max_length=20, 
+	telefono						= models.CharField(verbose_name="Télefono",
+													    max_length=20,
 													    blank=True, null=True, help_text='(Opcional).')
 
-	fax								= models.CharField( 
-													    max_length=20, 
-													    blank=True, null=True, help_text='(Opcional).')	
+	fax								= models.CharField(
+													    max_length=20,
+													    blank=True, null=True, help_text='(Opcional).')
 
 	email 							= models.EmailField(
 														verbose_name = 'Correo electrónico (Sede)',
-														max_length=100, 
-														unique=True, 
-														db_index=True, 
+														max_length=100,
+														unique=True,
+														db_index=True,
 														validators=[
-															EmailValidator(),	
+															EmailValidator(),
 														])
-	fecha_creacion					= models.DateField(verbose_name='Fecha creación', blank=True, null=True)	
+	fecha_creacion					= models.DateField(verbose_name='Fecha creación', blank=True, null=True)
 	fecha_cese						= models.DateField(blank=True, null=True)
 	descripcion_sede	   			= models.TextField('Descripción (Sede)', blank=True, null=True, help_text='(Opcional).')
-	observacion_sede   				= models.TextField('Observación (Sede)', blank=True, null=True, help_text='(Opcional).') 
+	observacion_sede   				= models.TextField('Observación (Sede)', blank=True, null=True, help_text='(Opcional).')
 	activo 							= models.BooleanField(choices=BOOL_ACTIVO, default=True)
 
 	#Métodos
 	#Python 3.X
 	def __str__(self):
 		return self.get_nombre_full()
-	
+
 	#Python 2.X
 	#def __unicode__(self):
-	#	return self.nombre		
+	#	return self.nombre
 	def get_nombre(self):
 		return self.nombre
 
@@ -82,22 +67,20 @@ class Sede(InfoSistema, Ubicacion):
 
 	def save(self, *args, **kwargs):
 		if not self.pk:
-			self.slug = slugify(self.get_nombre()) 
+			self.slug = slugify(self.get_nombre())
 		else:
-			slug = slugify(self.get_nombre()) 
+			slug = slugify(self.get_nombre())
 			if self.slug != slug:
 				self.slug = slug
 		super(Sede, self).save(*args, **kwargs)
-		
+
 	#Opciones
 	class Meta:
-		#Nombre para la tabla del gestor de base de datos 
+		#Nombre para la tabla del gestor de base de datos
 		db_table = 'Sedes'
 		#Ordenar los registros por un campo especifico
 		ordering = ('nombre',)
 		#Nombre para el Conjunto de Objetos en el Panel de Administración
-		verbose_name = 'Sede' 
+		verbose_name = 'Sede'
 		#Nombre en Plural en la lista de módulos en el Panel de Administración
 		verbose_name_plural = 'Sedes'
-
-

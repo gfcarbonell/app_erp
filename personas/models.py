@@ -10,6 +10,8 @@ from vias.models import Via
 from zonas.models import Zona
 from infos_sistemas.models import InfoSistema
 from ubicaciones.models import Ubicacion
+from ubicaciones_externas.models import UbicacionExterna
+
 from django.core.exceptions import ValidationError
 from django.core.validators import RegexValidator
 from django.core.validators import MaxLengthValidator
@@ -22,7 +24,7 @@ from django.core.validators import validate_ipv46_address
 from django.template.defaultfilters import slugify
 
 
-class Persona(InfoSistema, Ubicacion):
+class Persona(InfoSistema, Ubicacion, UbicacionExterna):
 	BOOL_HIJO 		 				= ((False, 'No'),(True, 'Si'))
 	CHOICES_GENERO 	 				= (('Masculino', 'Masculino'), ('Femenino', 'Femenino'))
 	CHOICES_TIPO_PERSONA 			= (('Natural', 'Natural'), ('Jurídica', 'Jurídica'))
@@ -104,20 +106,7 @@ class Persona(InfoSistema, Ubicacion):
 	observacion_persona 			= models.TextField(verbose_name='Observación (Persona)',
 													   blank=True, null=True,
 													   help_text='Escribir observación de la persona (Opcional).')
-	distrito 						= models.ForeignKey(Distrito, related_name='%(app_label)s_%(class)s_related')
-	zona							= models.ForeignKey(Zona, related_name='%(app_label)s_%(class)s_related')
-	via								= models.ForeignKey(Via, related_name='%(app_label)s_%(class)s_related')
-	nombre_direccion				= models.CharField(
-														verbose_name='Nombre dirección',
-														max_length=255,
-														validators=[
-															        MinLengthValidator(1),
-															        MaxLengthValidator(255),
-															    ],
-														db_index=True,
-														help_text='Escribir nombre de la dirección.')
-	observacion_direccion 			= models.TextField( verbose_name='Observación (Dirección)',
-														blank=True, null=True, help_text='(Opcional).')
+
 
 	def __unicode__(self):
 		return self.get_nombre_completo()
