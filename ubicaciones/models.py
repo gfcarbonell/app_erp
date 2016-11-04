@@ -23,7 +23,7 @@ class Ubicacion(models.Model):
     zona					= models.ForeignKey(Zona, related_name='%(app_label)s_%(class)s_related')
     via						= models.ForeignKey(Via, related_name='%(app_label)s_%(class)s_related',)
     nombre_zona_via  = models.CharField(
-    								verbose_name='Nombre',
+    								verbose_name='Nombre (Zona/Vía)',
     								max_length=255,
     								validators=[
     									        MinLengthValidator(1),

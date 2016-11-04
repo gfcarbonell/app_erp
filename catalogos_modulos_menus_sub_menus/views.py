@@ -8,8 +8,8 @@ class CatalagoModuloMenuTemplateView(TemplateView):
 	template_name = 'catologo_modulo_menu.html'
 
 	def get_context_data(self, **kwargs):
-		context = super(CatalagoModuloMenuTemplateView, self).get_context_data(**kwargs)	
-		is_auth  = False 
+		context = super(CatalagoModuloMenuTemplateView, self).get_context_data(**kwargs)
+		is_auth  = False
 		username = None
 		id_usuario = None
 		boton_menu = False
@@ -17,7 +17,7 @@ class CatalagoModuloMenuTemplateView(TemplateView):
 			id_usuario  = self.get_user_id()
 			is_auth 	= True
 			username    = self.get_username()
-			catalogos_modulos_menus = CatalogoModuloMenuSubMenu.objects.filter(menu__nombre='main')
+			catalogos_modulos_menus = CatalogoModuloMenuSubMenu.objects.filter(menu__slug='main')
 		data = {
 			'id_usuario' : id_usuario,
 			'is_auth'	 : is_auth,
@@ -30,7 +30,7 @@ class CatalagoModuloMenuTemplateView(TemplateView):
 		return context
 
 	def get_user_id(self):
-		return self.request.user.id 
+		return self.request.user.id
 
 	def get_username(self):
 		return self.request.user.username
@@ -40,8 +40,8 @@ class TramiteDocumentarioTemplateView(TemplateView):
 	template_name = 'tramite_documentario.html'
 
 	def get_context_data(self, **kwargs):
-		context = super(TramiteDocumentarioTemplateView, self).get_context_data(**kwargs)	
-		is_auth  = False 
+		context = super(TramiteDocumentarioTemplateView, self).get_context_data(**kwargs)
+		is_auth  = False
 		username = None
 		id_usuario = None
 		boton_menu = False
@@ -62,7 +62,7 @@ class TramiteDocumentarioTemplateView(TemplateView):
 		return context
 
 	def get_user_id(self):
-		return self.request.user.id 
+		return self.request.user.id
 
 	def get_username(self):
 		return self.request.user.username
@@ -72,11 +72,11 @@ class TramiteDocumentarioMenuTemplateView(TemplateView):
 	template_name = 'tramite_documentario_menu.html'
 
 	def get_context_data(self, **kwargs):
-		context = super(TramiteDocumentarioMenuTemplateView, self).get_context_data(**kwargs)	
-		is_auth  = False 
+		context = super(TramiteDocumentarioMenuTemplateView, self).get_context_data(**kwargs)
+		is_auth  = False
 		username = None
 		id_usuario = None
-		
+
 		if self.request.user.is_authenticated():
 			id_usuario  = self.get_user_id()
 			is_auth 	= True
@@ -95,7 +95,7 @@ class TramiteDocumentarioMenuTemplateView(TemplateView):
 		return context
 
 	def get_user_id(self):
-		return self.request.user.id 
+		return self.request.user.id
 
 	def get_username(self):
 		return self.request.user.username
@@ -105,8 +105,8 @@ class ControlAsistenciaTemplateView(TemplateView):
 	template_name = 'control_asistencia.html'
 
 	def get_context_data(self, **kwargs):
-		context = super(ControlAsistenciaTemplateView, self).get_context_data(**kwargs)	
-		is_auth  = False 
+		context = super(ControlAsistenciaTemplateView, self).get_context_data(**kwargs)
+		is_auth  = False
 		username = None
 		id_usuario = None
 		boton_menu = False
@@ -127,7 +127,7 @@ class ControlAsistenciaTemplateView(TemplateView):
 		return context
 
 	def get_user_id(self):
-		return self.request.user.id 
+		return self.request.user.id
 
 	def get_username(self):
 		return self.request.user.username
@@ -136,11 +136,11 @@ class ControlAsistenciaMenuTemplateView(TemplateView):
 	template_name = 'control_asistencia_menu.html'
 
 	def get_context_data(self, **kwargs):
-		context = super(ControlAsistenciaMenuTemplateView, self).get_context_data(**kwargs)	
-		is_auth  = False 
+		context = super(ControlAsistenciaMenuTemplateView, self).get_context_data(**kwargs)
+		is_auth  = False
 		username = None
 		id_usuario = None
-		
+
 		if self.request.user.is_authenticated():
 			id_usuario  = self.get_user_id()
 			is_auth 	= True
@@ -159,7 +159,7 @@ class ControlAsistenciaMenuTemplateView(TemplateView):
 		return context
 
 	def get_user_id(self):
-		return self.request.user.id 
+		return self.request.user.id
 
 	def get_username(self):
 		return self.request.user.username
@@ -168,8 +168,8 @@ class TributoMunicipalTemplateView(TemplateView):
 	template_name = 'tributo_municipal.html'
 
 	def get_context_data(self, **kwargs):
-		context = super(TributoMunicipalTemplateView, self).get_context_data(**kwargs)	
-		is_auth  = False 
+		context = super(TributoMunicipalTemplateView, self).get_context_data(**kwargs)
+		is_auth  = False
 		username = None
 		id_usuario = None
 		boton_menu = False
@@ -190,7 +190,7 @@ class TributoMunicipalTemplateView(TemplateView):
 		return context
 
 	def get_user_id(self):
-		return self.request.user.id 
+		return self.request.user.id
 
 	def get_username(self):
 		return self.request.user.username

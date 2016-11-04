@@ -37,31 +37,42 @@ class EmpleadoModelForm(forms.ModelForm):
 			'distrito' 		   				: forms.Select(attrs={'class':'select-field-default'}),
 			'zona' 		   					: forms.Select(attrs={'class':'select-field-default'}),
 			'via' 		   					: forms.Select(attrs={'class':'select-field-default'}),
-			'observacion_direccion'			: forms.Textarea(attrs={'class':'input-field-area-default'}),
+			'observacion_zona_via'			: forms.Textarea(attrs={'class':'input-field-area-default'}),
 
-			'nombre_direccion'				: forms.TextInput(attrs={'class':'input-field-default'}),
-			'sector'						: forms.TextInput(attrs={'class':'input-field-default'}),
-			'zona_secccion'					: forms.TextInput(attrs={'class':'input-field-default'}),
-			'pabellon'						: forms.TextInput(attrs={'class':'input-field-default'}),
-			'bloque' 						: forms.TextInput(attrs={'class':'input-field-default'}),
-			'pasadizo' 						: forms.TextInput(attrs={'class':'input-field-default'}),
-			'torre'							: forms.TextInput(attrs={'class':'input-field-default'}),
-			'edificio'						: forms.TextInput(attrs={'class':'input-field-default'}),
-			'departamento'					: forms.TextInput(attrs={'class':'input-field-default'}),
-			'apartamento'					: forms.TextInput(attrs={'class':'input-field-default'}),
-			'piso' 							: forms.NumberInput(attrs={'class':'input-field-default'}),
-			'interior'						: forms.TextInput(attrs={'class':'input-field-default'}),
-			'cuadra'						: forms.NumberInput(attrs={'class':'input-field-default'}),
-			'manzana'						: forms.TextInput(attrs={'class':'input-field-default'}),
-			'numero'						: forms.NumberInput(attrs={'class':'input-field-default'}),
-			'etapa'							: forms.TextInput(attrs={'class':'input-field-default'}),
-			'lote'							: forms.TextInput(attrs={'class':'input-field-default'}),
-			'sub_lote'						: forms.TextInput(attrs={'class':'input-field-default'}),
-			'kilometro'						: forms.NumberInput(attrs={'class':'input-field-default'}),
+			'nombre_zona_via'						 : forms.TextInput(attrs={'class':'input-field-default'}),
+			'numero_letra_asociado_nombre_via'		 : forms.TextInput(attrs={'class':'input-field-default'}),
+			'prefijo_bis_vial'						 : forms.CheckboxInput(attrs={'class':''}),
+			'numero_letra_asociado_prefijo_bis_vial' : forms.TextInput(attrs={'class':'input-field-default'}),
+			'cuadrante_vial'						 : forms.Select(attrs={'class':'select-field-default'}),
+
+
+			'numero_via_generadora' 					 	: forms.NumberInput(attrs={'class':'input-field-default'}),
+			'numero_letra_asociado_numero_via_generadora'	: forms.TextInput(attrs={'class':'input-field-default'}),
+			'prefijo_bis_numero_via_generadora'				: forms.CheckboxInput(attrs={'class':''}),
+			'numero_letra_asociado_prefijo_bis_numero_via_generadora'	: forms.TextInput(attrs={'class':'input-field-default'}),
+			'numero_placa'									: forms.NumberInput(attrs={'class':'input-field-default'}),
+			'cuadrante_via_generadora' 						: forms.Select(attrs={'class':'select-field-default'}),
+
+			'division_area_urbana'						: forms.Select(attrs={'class':'select-field-default'}),
+			'nombre_division_area_urbana'				: forms.TextInput(attrs={'class':'input-field-default'}),
+
+			'nucleo_residencial'						: forms.Select(attrs={'class':'select-field-default'}),
+			'nombre_nucleo_residencial'					: forms.NumberInput(attrs={'class':'input-field-default'}),
+
+			'ubicacion_predio'							: forms.Select(attrs={'class':'select-field-default'}),
+			'identificador_ubicacion_predio'			: forms.TextInput(attrs={'class':'input-field-default'}),
+
+			'tipo_predio'						: forms.Select(attrs={'class':'select-field-default'}),
+			'nombre_tipo_predio'				: forms.NumberInput(attrs={'class':'input-field-default'}),
+
+
 			'denominacion'					: forms.TextInput(attrs={'class':'input-field-default'}),
 			'referencia'					: forms.Textarea(attrs={'class':'input-field-area-default'}),
 
-			'area' 		   					: forms.Select(attrs={'class':'select-field-default'}),
+			'complemento_ubicacion_tipo_predio' 		     : forms.Select(attrs={'class':'select-field-default'}),
+			'numero_letra_complemento_ubicacion_tipo_predio' : forms.TextInput(attrs={'class':'input-field-default'}),
+
+			'area'							: forms.Select(attrs={'class':'select-field-default'}),
 			'tipo_empleado'					: forms.Select(attrs={'class':'select-field-default'}),
 			'cargo'							: forms.Select(attrs={'class':'select-field-default'}),
 			'grado_instruccion'				: forms.Select(attrs={'class':'select-field-default'}),
