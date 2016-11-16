@@ -1,11 +1,11 @@
 # -*- encoding: utf-8 -*-
 from django.contrib import admin
 from infos_sistemas.admin import InfoSistemaAdmin
-from .models import Zona 
+from .models import Zona
 
 @admin.register(Zona)
 class ZonaAdmin(InfoSistemaAdmin):
-	list_display   = ('nombre', 
+	list_display   = ('nombre', 'abreviatura',
 					  'slug', 'fecha_registro', 'usuario_creador', 'nombre_host', 'direccion_ip',
 					  'fecha_ultima_actualizacion', 'ultimo_usuario_editor', 'ultimo_nombre_host', 'ultimo_direccion_ip')
 	list_instances = True
